@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Fonts for the site-->
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Materialize CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!--NavBar Adapted from Materialize templates-->
+        <nav class="nav-extended">
+            <!--Dropdown menus need to be included-->
+            <ul id="dropdown1a" class="dropdown-content">
+                <li><a href="/get_pitchers">Activists</a></li>
+                <li><a href="/get_catchers">Developers</a></li>
+                <li><a href="/get_pitches">Projects</a></li>
+            </ul>
+            <ul id="dropdown1b" class="dropdown-content">
+                <li><a href="/get_pitchers">Activists</a></li>
+                <li><a href="/get_catchers">Developers</a></li>
+                <li><a href="/get_pitches">Projects</a></li>
+            </ul>
+            <ul id="dropdown2a" class="dropdown-content">
+                <li><a href="/reg_pitcher">Activists</a></li>
+                <li><a href="/reg_catcher">Developers</a></li>
+                <li><a href="/reg_pitch">Projects</a></li>
+            </ul>
+            <ul id="dropdown2b" class="dropdown-content">
+                <li><a href="/reg_pitcher">Activists</a></li>
+                <li><a href="/reg_catcher">Developers</a></li>
+                <li><a href="/reg_pitch">Projects</a></li>
+            </ul>
+
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo center">pitchCatch</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons right">menu</i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1a">Search<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown2a">Register<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+
+                <!--Side Navabr-->
+                <ul id="mobile-demo" class="side-nav">
+                    <li><a class="dropdown-button" data-activates="dropdown1b">Search</a></li>
+                    <li><a class="dropdown-button" data-activates="dropdown2b">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        {% block content %} {% endblock %}
+
+    </div>
+    <!--JQuery libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--Materiliaze JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!--custom js-->
+    <script type="text/javascript" src="/static/js/main.js"></script>
+
+</body>
+
+</html>

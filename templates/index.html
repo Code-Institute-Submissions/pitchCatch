@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="row margin-top">
+    <div class="col s12 m4">
+        <div class="valign-wrapper">
+            <h5>Connecting people with passion and people with skills to make change that matters.</h5>
+        </div>
+    </div>
+    <!--Test alternative to tabs-->
+    <div class="col s12 m6">
+        <ul class="collapsible popout" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">whatshot</i>
+                    <p>defn.<em> pitcher</em></p>
+                </div>
+                <div class="collapsible-body">
+                    <blockquote>
+                        <p><em>n.</em> a social movement or campaign with the ability to make 'pitches' (proposals) for collaboration to pitchCatch's network of 'catchers' (developers).</p>
+                        <p>There are {{pitcher_count}} 'pitchers' in the pitchCatch network.</p>
+                        <p>You can explore the profiles of existing
+                            <a href="/pitchers">pitchers,</a>
+                            <a href="/get_catchers">catchers</a> and
+                            <a href="/reg_pitches">pitches</a> or just join us now...
+                        </p>
+                        <!--<a href="/reg_pitcher" class="btn-floating btn-large red lighten-3 pulse right hoverable"><i class="material-icons">add</i></a>-->
+                    </blockquote>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">place</i>
+                    <p>defn. <em>catcher</em></p>
+                </div>
+                <div class="collapsible-body">
+                    <blockquote>
+                        <p><em>n.</em> a developer with the ability to 'catch' (express interest in) 'pitches' (proposals) for collaboration made by pitchCatch's network of 'pitchers' (social movements).</p>
+                        <p>There are {{catcher_count}} 'catchers' in the pitchCatch network.</p>
+                        <p>You can explore the profiles of existing
+                            <a href="/pitchers">pitchers,</a>
+                            <a href="/get_catchers">catchers</a> and
+                            <a href="/reg_pitches">pitches</a> or just join us now...
+                        </p>
+                        <!--<a href="/reg_catcher" class="btn-floating btn-large indigo lighten-2 pulse right hoverable"><i class="material-icons">add</i></a>-->
+                    </blockquote>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">filter_drama</i>
+                    <p>defn. <em>pitch</em></p>
+                </div>
+                <div class="collapsible-body">
+                    <blockquote>
+                        <p><em>n.</em> a proposal by a pitchCatch 'pitcher' (social movement) which requires the expertise of 'catchers' (software developers).</p>
+                        <p>There have been {{pitch_count}} 'pitches' made through the pitchCatch network.</p>
+                        <p>You can explore the profiles of existing
+                            <a href="/pitchers">pitchers,</a>
+                            <a href="/get_catchers">catchers</a> and
+                            <a href="/reg_pitches">pitches</a> or just join us now...
+                        </p>
+                        <!--<a href="/reg_pitch" class="btn-floating btn-large lime darken-2 pulse right hoverable"><i class="material-icons">add</i></a>-->
+                    </blockquote>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    <form method='POST' action=''>
+    {{ form.csrf_token }}
+    {{ form.id }}
+
+        <button type="submit" value="CatchReg" name="registration">Register</button>
+    </form>
+
+
+
+
+{% endblock %}
