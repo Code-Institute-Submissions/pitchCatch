@@ -1,0 +1,17 @@
+<!--Code adapted from WTForms Documentation-->
+<!--http://flask.pocoo.org/docs/1.0/patterns/wtforms/-->
+
+{% macro render_field(field) %}
+
+{{ field.label }}
+{{ field(**kwargs)|safe }}
+
+{% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </dd>
+{% endmacro %}
