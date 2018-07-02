@@ -1,0 +1,72 @@
+{% extends 'base.html' %} 
+
+
+{% block content %}
+
+<div class="row">
+
+    <!--Pitcher registration head banner-->
+    <div class="col s12 background-pitchers right-align margin-top-section banner">
+        <h5>pitcher Registration</h5>
+    </div>
+    
+    <!--Registration Form-->
+    <form method="POST" class="margin-header" action="/reg_pitcher" autocomplete="off" enctype="multipart/form-data">
+        
+        <!--csrf token-->
+        {{ form.csrf_token }}
+        <div class="row">
+            
+            <!--Form Text Area - Name-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">people</i>
+                {{ form.movement_name.label }}
+                {{ render_field(form.movement_name) }}
+            </div>
+
+            <!--Form Text Input - URL-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">web</i>
+                {{ form.movement_url.label }}
+                {{ render_field(form.movement_url) }}
+            </div>
+
+            <!--Form Select - Interests-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">priority_high</i>
+                {{ form.interests.label }}
+                {{ render_field(form.interests) }} 
+            </div>
+
+            <!--Form Select - Region-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">public</i>
+               {{ form.region.label }}
+               {{ render_field(form.region) }}
+            </div>
+
+            <!--Form Text Area - Description-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">assignment</i>
+                {{ form.movement_description.label }}
+                {{ render_field(form.movement_description) }}
+            </div>
+
+            <!--Form Text Input - email-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">contact_mail</i>
+                {{ form.email.label }}
+                {{ render_field(form.email) }}
+            </div>
+
+            <!--Submit Form Button-->
+            <div class="col s12 center-align">
+                <button class="btn btn-sm waves-effect waves-light" type="submit">Register
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
