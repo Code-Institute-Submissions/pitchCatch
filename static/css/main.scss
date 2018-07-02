@@ -1,0 +1,191 @@
+@import "variables.scss";
+@import "navbar.scss";
+@import "fonts.scss";
+@import "headers.scss";
+@import "accordian.scss";
+@import "globals.scss";
+@import "forms.scss";
+
+
+
+
+// ///////////////////////////////////////////////////body
+body {
+    background: {
+        size: cover;
+        repeat: no-repeat;
+        image: url('/static/images/back-image.jpg');
+        attachment: fixed;
+        position: center;
+    }
+}
+
+
+
+hr {
+    width: 75%;
+    margin-bottom: 2rem;
+}
+
+///////////////////////////////////////////////////// icons
+// .pitch-catch-icons {
+//     font-size: 15rem !important;
+//     color: $white !important;
+//     text-shadow: $text-shadow;
+//     padding-left: 1rem;
+
+//     @media (min-width: 992px) {
+//         font-size: 10rem !important;
+//     }
+// }
+
+form .material-icons {
+    color: $white !important;
+    text-shadow: $text-shadow;
+}
+
+i.medium {
+    font-size: 2rem;
+}
+
+////////////////////////////////////////////////////// fonts
+
+
+// .home-panels {
+//     @media (min-width: 992px) {
+//         font-size: 1.5rem;
+//         padding-bottom: .5rem;
+//     }
+// }
+
+.reg-header {
+    @media (min-width: 992px) {
+        font-size: 3rem !important;
+        line-height: 0 !important;
+    }
+}
+
+
+
+.card-title {
+    padding-bottom: 2rem;
+    text-shadow: $text-shadow !important;
+    font: {
+        // size: $sm-headers !important;
+        weight: 500 !important;
+        family: 'Jua', sans-serif !important;
+    }
+    @media (min-width: 992px) {
+        font-size: $lg-headers !important;
+    }
+}
+
+// label {
+//     font: {
+//         size: $sm-body !important;
+//         weight: $labels-weight !important;
+//     }
+//     color: $yellow-label !important;
+//     margin-right: 4rem;
+
+//     @media (min-width: 992px) {
+//         font: {
+//             size: 1.2rem !important;
+//             weight: $labels-weight !important;
+//         }
+//         margin-left: 5rem;
+//     }
+
+// }
+
+
+.card-reveal {
+    background-color: $black !important;
+    color: $white !important;
+}
+
+.form-label {
+    font-size: 3rem;
+
+}
+
+// input,
+// textarea {
+//     font-size: 3rem !important;
+//     color: $white;
+
+//     @media (min-width: 992px) {
+//         font-size: $lg-body !important;
+//     }
+// }
+
+
+.card-quote {
+    border-left: 0.1rem solid $white;
+}
+
+
+
+
+
+
+
+
+// buttons
+// .btn-large {
+//     background-color: $green;
+//     font: {
+//         size: 3rem;
+//         family: 'Jua', 'sans-serif';
+//     }
+//     border-radius: 25px;
+//     height: 7rem;
+//     margin-bottom: 2rem;
+
+//     @media (min-width: 992px) {
+//         font-size: 2rem;
+//         height: 4rem;
+//         margin: {
+//             top: 4rem;
+//             left: 8rem;
+//             bottom: 0rem;
+//         }
+
+//     }
+// }
+
+// .btn-large i {
+//     font-size: 4rem;
+//     @media (min-width: 992px) {
+//         font-size: 2rem;
+//     }
+// }
+
+.delete {
+    color: $red-delete;
+    font-size: 10rem;
+}
+
+.edit {
+    font-size: 10rem;
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+// forms
+
+
+
+// ////////////////////////////////////////////cards
+// .card-panel {
+//     color: $white;
+//     border-radius: 25px;
+// }
+
+////////////////////////////////////// Profile Desciption
+blockquote {
+    border-left: .5rem solid $green;
+}

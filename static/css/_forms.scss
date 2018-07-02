@@ -1,0 +1,23 @@
+form .material-icons {
+    color: $white !important;
+    text-shadow: $text-shadow;
+}
+
+i.medium {
+    font-size: 2rem;
+}
+
+div label {
+    color: $yellow !important;
+    font-weight: 600;
+}
+
+textarea.materialize-textarea {
+    padding: 0;
+}
+
+/*form background*/
+.form-bground {
+    box-shadow: 6px 6px 4px 1px black;
+    padding: .5rem;
+}

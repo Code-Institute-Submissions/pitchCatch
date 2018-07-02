@@ -1,0 +1,29 @@
+/*Background themes*/
+.background-pitchers {
+    background-color: $red;
+    opacity: $opacity;
+}
+
+.background-catchers {
+    background-color: $purple;
+    opacity: $opacity;
+}
+
+.background-pitches {
+    background-color: $yellow;
+    opacity: $opacity;
+}
+
+/*Margins*/
+.margin-top-main {
+    margin-top: 10rem;
+}
+
+.margin-top-section {
+    margin-top: 5rem;
+}
+
+/*Banners*/
+.banner {
+    width: 33%;
+}
