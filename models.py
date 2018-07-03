@@ -3,19 +3,18 @@ import sqlalchemy as sa
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Date, DateTime, Integer, String, Text, ForeignKey
-from sqlalchemy_utils import URLType, EmailType
+from sqlalchemy_utils import URLType, EmailType, ChoiceType
 from sqlalchemy.orm import sessionmaker, relationship
-from wtforms_alchemy import ModelForm
 
 
 
-
-
-# Models
+"""setting up WTForms-Alchemy"""
 engine = create_engine('postgresql://ubuntu:pw123@localhost:5432/pitch_catch_caught')
 Base = declarative_base(engine)
 Session = sessionmaker(bind=engine)
-session = Session()
+
+# Checking to see if this equiv to SQLAlchemy(app)
+# session = Session()
 
 
 
@@ -50,43 +49,40 @@ class Pitcher(Base):
         Text, nullable=False,
         info={'label': 'Describe what you do'}
     )
+    
+    INTERESTS = [
+        ('promoting social and economic equality', 'promoting social and economic equality'),
+        ('protecting the right to privacy', 'protecting the right to privacy'),
+        ('exposing corruption and maladministration', 'exposing corruption and maladministration'),
+        ('challenging discrimination', 'challenging discrimination'),
+        ('enhancing communication and collaboration between activists', 'enhancing communication and collaboration between activists'),
+        ('creating and sustaining alternative platforms/institutions', 'creating and sustaining alternative platforms/institutions'),
+    ]
+    
+    
     interests = sa.Column(
-        Text, nullable=False,
-        info={
-            'label': 'What is your main interest...',
-            'choices': [
-                'promoting social and economic equality',
-                'protecting the right to privacy',
-                'exposing corruption and maladministration', 
-                'challenging discrimination',
-                'enhancing communication and collaboration between activists', 
-                'creating and sustaining alternative platforms/institutions'
-            ]
-        }
+        ChoiceType(INTERESTS), nullable=False,
+        info={'label': 'What is your main interest...'},        
     )
+
     email = sa.Column(
         EmailType, nullable=False, unique=True,
         info={'label': 'Contact email'}
     )
+    
+    REGIONS = [
+        ('Asia', 'Asia'),
+        ('Africa', 'Africa'),
+        ('Europe', 'Europe'),
+        ('North America', 'North America'),
+        ('South America', 'South America'),
+        ('Australia', 'Australia'),
+    ]   
+    
     region = sa.Column(
-        String(40), nullable=False,
-        info={'label': 'Where are you based?',
-            'choices': [
-                'Asia',
-                'Africa',
-                'Europe',
-                'North America',
-                'South America',
-                'Australia'
-            ]
-        }
+        ChoiceType(REGIONS), nullable=False,
+        info={'label': 'Where are you based?'},        
     )
-
-
-"""Pitcher form"""
-class PitcherForm(ModelForm):
-    class Meta:
-        model = Pitcher
 
 
 
@@ -130,12 +126,6 @@ class Pitch(Base):
             'description': 'Provide a website link'})
     pitcher_id = sa.Column(sa.Integer, sa.ForeignKey('pitchers.id'), nullable=False)
     pitcher = sa.orm.relationship('Pitcher', backref=sa.orm.backref('throw', lazy=True))
-
-
-"""PitchForm"""
-class PitchForm(ModelForm):
-    class Meta:
-        model = Pitch
 
 
 
@@ -239,10 +229,7 @@ class Catcher(Base):
     )
     pitches_caught = sa.orm.relationship('Pitch', secondary=caught, backref=sa.orm.backref('pitch_catch', lazy='dynamic'))
 
-"""CatcherForm"""
-class CatcherForm(ModelForm):
-    class Meta:
-        model = Catcher
 
-# if __name__ == "__main__":
-#     Base.metadata.create_all(engine, checkfirst=True)
+
+if __name__ == "__main__":
+    Base.metadata.create_all(engine, checkfirst=True)
