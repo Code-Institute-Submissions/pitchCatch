@@ -5,17 +5,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Date, DateTime, Integer, String, Text, ForeignKey
 from sqlalchemy_utils import URLType, EmailType, ChoiceType
 from sqlalchemy.orm import sessionmaker, relationship
+from choices import INTERESTS, REGIONS, YN, EXPERIENCE
+from database import Base
 
 
-
-"""setting up WTForms-Alchemy"""
-engine = create_engine('postgresql://ubuntu:pw123@localhost:5432/pitch_catch_caught')
-Base = declarative_base(engine)
-Session = sessionmaker(bind=engine)
-
-# Checking to see if this equiv to SQLAlchemy(app)
-# session = Session()
-
+  
 
 
 """
@@ -40,50 +34,38 @@ class Pitcher(Base):
         info={'label': 'Movement name'}
     )
     movement_url = sa.Column(
-        URLType(), nullable=False,
-        info={
-            'label': 'Show us what you do',
-            'description': 'Provide a website link'}
+        URLType(),
+        info={'label': 'Provide a link to your work'}
     )
     movement_description = sa.Column(
         Text, nullable=False,
         info={'label': 'Describe what you do'}
     )
-    
-    INTERESTS = [
-        ('promoting social and economic equality', 'promoting social and economic equality'),
-        ('protecting the right to privacy', 'protecting the right to privacy'),
-        ('exposing corruption and maladministration', 'exposing corruption and maladministration'),
-        ('challenging discrimination', 'challenging discrimination'),
-        ('enhancing communication and collaboration between activists', 'enhancing communication and collaboration between activists'),
-        ('creating and sustaining alternative platforms/institutions', 'creating and sustaining alternative platforms/institutions'),
-    ]
-    
-    
     interests = sa.Column(
         ChoiceType(INTERESTS), nullable=False,
-        info={'label': 'What is your main interest...'},        
+        info={'label': 'What is your main interest?'}        
     )
 
     email = sa.Column(
         EmailType, nullable=False, unique=True,
         info={'label': 'Contact email'}
     )
-    
-    REGIONS = [
-        ('Asia', 'Asia'),
-        ('Africa', 'Africa'),
-        ('Europe', 'Europe'),
-        ('North America', 'North America'),
-        ('South America', 'South America'),
-        ('Australia', 'Australia'),
-    ]   
-    
     region = sa.Column(
         ChoiceType(REGIONS), nullable=False,
         info={'label': 'Where are you based?'},        
     )
 
+    def __init__(self, movement_name=None, movement_url=None, movement_description=None,
+        interests=None, email=None, region=None):
+        self.movement_name = movement_name
+        self.movement_url = movement_url
+        self.movement_description = movement_description
+        self.interests = interests
+        self.email = email
+        self.region = region
+    
+    def __repr__(self):
+        return '<Pitcher %r>' % (self.movement_name)
 
 
 """
@@ -95,38 +77,34 @@ class Pitch(Base):
     id = sa.Column(Integer, primary_key=True, autoincrement=True)
     proposal_name = sa.Column(
         String(200), nullable=False, unique=True,
-        info={'label': 'Name of your proposal'}
+        info={'label': 'Name of proposal'}
     )
     proposal_outline = sa.Column(
         Text, nullable=False,
         info={'label': 'Details of your proposal'}
     )
     interests = sa.Column(
-        Text, nullable=False,
-        info={
-            'label': 'What is your main interest...',
-            'choices': [
-                'promoting social and economic equality',
-                'protecting the right to privacy',
-                'exposing corruption and maladministration', 
-                'challenging discrimination',
-                'enhancing communication and collaboration between activists', 
-                'creating and sustaining alternative platforms/institutions'
-            ]    
-        }
+        ChoiceType(INTERESTS), nullable=False,
+        info={'label': 'What is your main interest?',}
     )
     launch_date = sa.Column(
         Date,
         info={'label': 'Ideal launch date'}
     )
-    pitch_url = sa.Column(
-        URLType(),
-        info={
-            'label': 'Show us the need for your proposal',
-            'description': 'Provide a website link'})
     pitcher_id = sa.Column(sa.Integer, sa.ForeignKey('pitchers.id'), nullable=False)
     pitcher = sa.orm.relationship('Pitcher', backref=sa.orm.backref('throw', lazy=True))
 
+    
+    def __init__(self, proposal_name=None, proposal_outline=None,
+        interests=None, launch_date=None, pitcher_id=None):
+        self.proposal_name = proposal_name
+        self.proposal_outline = proposal_outline
+        self.interests = interests
+        self.launch_date = launch_date
+        self.pitcher_id = pitcher_id
+    
+    def __repr__(self):
+        return '<Pitch %r>' % (self.proposal_name)
 
 
 """
@@ -143,68 +121,31 @@ class Catcher(Base):
     developer_url = sa.Column(
         URLType(),
         info={
-            'label': 'Show us what you do',
-            'description': 'Provide a website link'}
+            'label': 'Show us what you do'}
     )
     developer_description = sa.Column(
         Text,
         info={'label': 'Tell us about yourself'}
     )
     interests = sa.Column(
-        Text, nullable=False,
-        info={
-            'label': 'What is your main interest...',
-            'choices': [
-                'promoting social and economic equality',
-                'protecting the right to privacy',
-                'exposing corruption and maladministration', 
-                'challenging discrimination',
-                'enhancing communication and collaboration between activists', 
-                'creating and sustaining alternative platforms/institutions'
-            ]    
-        }
+        ChoiceType(INTERESTS), nullable=False,
+        info={'label': 'What is your main interest?'}        
     )
     frontend_interest = sa.Column(
-        String(10), nullable=False,
-        info={
-            'label': 'Interested in Front-end development?',
-            'choices': [
-                'Yes',
-                'No',
-            ]
-        }
+        ChoiceType(YN), nullable=False,
+        info={'label': 'Interested in Front-end development?'}
     )
     backend_interest = sa.Column(
-        String(10), nullable=False,
-        info={
-            'label': 'Interested in Back-end development?',
-            'choices': [
-                'Yes',
-                'No',
-            ]
-        }
+        ChoiceType(YN), nullable=False,
+        info={'label': 'Interested in Front-end development?'}
     )
     frontend_experience = sa.Column(
-        String(50), nullable=False,
-        info={
-            'label': 'Your Front-end experience:',
-            'choices': [
-                'Beginner',
-                'Intermediate',
-                'Expert'
-            ]
-        }
+        ChoiceType(EXPERIENCE), nullable=False,
+        info={'label': 'Your Front-end experience:'}
     )
     backend_experience = sa.Column(
-        String(50), nullable=False,
-        info={
-            'label': 'Your Back-end experience:',
-            'choices': [
-                'Beginner',
-                'Intermediate',
-                'Expert'
-            ]
-        }
+        ChoiceType(EXPERIENCE), nullable=False,
+        info={'label': 'Your Back-end experience:'}
     )
     prog_languages = sa.Column(
         Text, nullable=False,
@@ -215,21 +156,25 @@ class Catcher(Base):
         info={'label': 'Contact email'}
     )
     region = sa.Column(
-        String(40),
-        info={'label': 'Where are you based?',
-            'choices': [
-                'Asia',
-                'Africa',
-                'Europe',
-                'North America',
-                'South America',
-                'Australia'
-            ]
-        }
+        ChoiceType(REGIONS), nullable=False,
+        info={'label': 'Where are you based?'}
     )
     pitches_caught = sa.orm.relationship('Pitch', secondary=caught, backref=sa.orm.backref('pitch_catch', lazy='dynamic'))
 
-
-
-if __name__ == "__main__":
-    Base.metadata.create_all(engine, checkfirst=True)
+    def __init__(self, developer_name=None, developer_url=None, developer_description=None,
+        interests=None, frontend_interest=None, backend_interest=None, frontend_experience=None,
+        backend_experience=None, prog_languages=None, email=None, region=None):
+        self.developer_name = developer_name
+        self.developer_url = developer_url
+        self.developer_description = developer_description
+        self.interests = interests
+        self.frontend_interest = frontend_interest
+        self.backend_interest = backend_interest
+        self.frontend_experience = frontend_experience
+        self.backend_experience = backend_experience
+        self.prog_languages = prog_languages
+        self.email = email
+        self.region = region
+    
+    def __repr__(self):
+        return '<Pitcher %r>' % (self.movement_name)
