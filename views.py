@@ -54,3 +54,32 @@ def reg_pitcher():
         return redirect(url_for('index'))
 
     return render_template('reg_pitcher.html', form=form)
+
+
+"""
+Catcher Registration Page
+"""
+@app.route('/reg_catcher', methods=["GET", "POST"])
+def reg_catcher():
+    
+    form = CatcherForm(request.form)
+    
+    if request.method == 'POST' and form.validate():
+        catcher = Catcher(
+            form.developer_name.data,
+            form.developer_url.data,
+            form.developer_description.data,
+            form.interests.data,
+            form.frontend_interest.data,
+            form.backend_interest.data,
+            form.frontend_experience.data,
+            form.backend_experience.data,
+            form.prog_languages.data,
+            form.email.data,
+            form.region.data,
+            )
+        db_session.add(catcher)
+        db_session.commit()
+        return redirect(url_for('index'))
+
+    return render_template('reg_pitcher.html', form=form)
