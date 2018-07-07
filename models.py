@@ -121,7 +121,7 @@ class Catcher(Base):
     developer_url = sa.Column(
         URLType(),
         info={
-            'label': 'Show us what you do'}
+            'label': 'Provide a link to some of your code'}
     )
     developer_description = sa.Column(
         Text,
