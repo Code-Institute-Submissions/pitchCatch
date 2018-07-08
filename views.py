@@ -31,8 +31,11 @@ def index():
                                         pitch_count=str(pitch_count))
 
 
+
+"""REGISTRATION VIEWS"""
+
 """
-Pitcher Registration Page
+Pitcher Registration
 """
 @app.route('/reg_pitcher', methods=['GET', 'POST'])
 def reg_pitcher():
@@ -60,7 +63,7 @@ def reg_pitcher():
 
 
 """
-Catcher Registration Page
+Catcher Registration
 """
 @app.route('/reg_catcher', methods=["GET", "POST"])
 def reg_catcher():
@@ -89,7 +92,7 @@ def reg_catcher():
 
 
 """
-Pitch Registration Page
+Pitch Registration
 """
 @app.route('/reg_pitch', methods=["GET", "POST"])
 def reg_pitch():
@@ -100,7 +103,7 @@ def reg_pitch():
     
     if request.method == 'POST':
         the_pitcher = db_session.query(Pitcher).filter_by(movement_name=request.form['pitcher_id']).one()
-        # print(the_pitcher.id)
+
         pitch = Pitch(
             form.proposal_name.data,
             form.proposal_outline.data,
@@ -108,7 +111,6 @@ def reg_pitch():
             form.launch_date.data,
             pitcher_id=the_pitcher.id
             )
-    #     # pitch.pitcher_id = the_pitcher.id
         db_session.add(pitch)
         db_session.commit()
 
@@ -117,3 +119,15 @@ def reg_pitch():
 
     sponsor = db_session.query(Pitcher).all()
     return render_template('reg_pitch.html', form=form, sponsor=sponsor)
+
+
+"""PROFILE VIEWS"""
+
+"""
+Pitcher profile
+"""
+@app.route('/pitcher_profile/<movement_name>', methods=['GET', 'POST'])
+def pitcher_profile(movement_name):
+    pitcher_profile = db_session.query(Pitcher).filter_by(movement_name=movement_name)
+
+    return render_template('pitcher_profile.html', pitcher_profile=pitcher_profile)
