@@ -16,7 +16,8 @@ PitchForm
 class PitchForm(ModelForm):
     class Meta:
         model = Pitch
-
+        include = ['pitcher_id']
+        
 
 """
 CatcherForm
