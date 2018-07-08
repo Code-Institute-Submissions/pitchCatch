@@ -46,9 +46,12 @@ def reg_pitcher():
             form.movement_description.data,
             form.interests.data,
             form.email.data,
-            form.region.data)
+            form.region.data,
+            )
         db_session.add(pitcher)
         db_session.commit()
+        
+        # need a KeyError exception here to avoid duplicates
 
         # Change this to redirect to new profile page
         return redirect(url_for('index'))
@@ -82,4 +85,34 @@ def reg_catcher():
         db_session.commit()
         return redirect(url_for('index'))
 
-    return render_template('reg_pitcher.html', form=form)
+    return render_template('reg_catcher.html', form=form)
+
+
+"""
+Pitch Registration Page
+"""
+@app.route('/reg_pitch', methods=["GET", "POST"])
+def reg_pitch():
+    
+    form = PitchForm(request.form)
+    form.pitcher_id.choices = [(g.id, g.movement_name) for g in Pitcher.query.order_by('movement_name')]
+
+    
+    if request.method == 'POST' and form.validate():
+        the_pitcher = db_session.query(Pitcher).filter_by(id=request.form['pitcher_id']).one()
+        pitch = Pitch(
+            form.proposal_name.data,
+            form.proposal_outline.data,
+            form.interests.data,
+            form.launch_date.data,
+            pitcher_id=the_pitcher
+            )
+        # pitch.pitcher_id = the_pitcher.id
+        db_session.add(pitch)
+        db_session.commit()
+
+        # Change this to redirect to an acknowledgement page
+        return redirect(url_for('index'))
+
+    sponsor = db_session.query(Pitcher).all()
+    return render_template('reg_pitch.html', form=form, sponsor=sponsor)
