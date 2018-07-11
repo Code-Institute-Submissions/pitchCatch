@@ -131,3 +131,12 @@ def pitcher_profile(movement_name):
     pitcher_profile = db_session.query(Pitcher).filter_by(movement_name=movement_name)
 
     return render_template('pitcher_profile.html', pitcher_profile=pitcher_profile)
+
+"""
+Catcher Profile
+"""
+@app.route('/catcher_profile/<developer_name', methods=['GET', 'POST'])
+def catcher_profile(developer_name):
+    catcher_profile = db_session.query(Catcher).filter_by(developer_name=developer_name)
+    
+    return render_template('catcher_profile.html', catcher_profile=catcher_profile)
