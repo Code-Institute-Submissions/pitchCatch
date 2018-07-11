@@ -1,7 +1,8 @@
 /*Background themes*/
 .background-pitchers {
-    background-color: $red;
+    background-color: $green;
     opacity: $opacity;
+    box-shadow: $box-shadow;
 }
 
 .background-catchers {
@@ -21,6 +22,19 @@
 
 .margin-top-section {
     margin-top: 5rem;
+}
+
+.profile-name {
+    margin-top: 20%;
+}
+
+.profile-card {
+    margin-top: 10%;
+}
+
+hr {
+    width: 33.3%;
+    margin-bottom: 2rem;
 }
 
 /*Banners*/

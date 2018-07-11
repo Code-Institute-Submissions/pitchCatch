@@ -5,6 +5,7 @@
 @import "accordian.scss";
 @import "globals.scss";
 @import "forms.scss";
+@import "card.scss";
 
 
 
@@ -22,10 +23,7 @@ body {
 
 
 
-hr {
-    width: 75%;
-    margin-bottom: 2rem;
-}
+
 
 ///////////////////////////////////////////////////// icons
 // .pitch-catch-icons {
@@ -67,18 +65,18 @@ i.medium {
 
 
 
-.card-title {
-    padding-bottom: 2rem;
-    text-shadow: $text-shadow !important;
-    font: {
-        // size: $sm-headers !important;
-        weight: 500 !important;
-        family: 'Jua', sans-serif !important;
-    }
-    @media (min-width: 992px) {
-        font-size: $lg-headers !important;
-    }
-}
+// .card-title {
+//     padding-bottom: 2rem;
+//     text-shadow: $text-shadow !important;
+//     font: {
+//         // size: $sm-headers !important;
+//         weight: 500 !important;
+//         family: 'Jua', sans-serif !important;
+//     }
+//     @media (min-width: 992px) {
+//         font-size: $lg-headers !important;
+//     }
+// }
 
 // label {
 //     font: {
@@ -99,15 +97,15 @@ i.medium {
 // }
 
 
-.card-reveal {
-    background-color: $black !important;
-    color: $white !important;
-}
+// .card-reveal {
+//     background-color: $black !important;
+//     color: $white !important;
+// }
 
-.form-label {
-    font-size: 3rem;
+// .form-label {
+//     font-size: 3rem;
 
-}
+// }
 
 // input,
 // textarea {
@@ -120,9 +118,9 @@ i.medium {
 // }
 
 
-.card-quote {
-    border-left: 0.1rem solid $white;
-}
+// .card-quote {
+//     border-left: 0.1rem solid $white;
+// }
 
 
 
