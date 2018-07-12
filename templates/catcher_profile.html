@@ -1,0 +1,84 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="row margin-top">
+
+
+    <div class="col s12 background-catchers left-align">
+        <h1>catcher Profile</h1>
+    </div>
+
+
+    {% for catcher in catcher_profile %}
+    <div class="col s12 m4 left-align profile-name">
+        <blockquote class="blocktheme-catcher">
+            <h1>{{catcher.developer_name}}</h1>
+        </blockquote>
+    </div>
+
+
+    <!--testing materilize card-->
+
+    <div class="col s12 m8 profile-card">
+        <div class="card sticky-action">
+            <div>
+                <div class="brand-logo center-align"><img src="/static/images/catcher.png">Summary</div>
+                <hr>
+                <ul class="center-align">
+                    <li><strong>WHERE I'M BASED:</strong></li>
+                    <li><em>{{catcher.region.value}}</em></li>
+                    <li><strong>MY MAIN AREA OF INTEREST IS:</strong></li>
+                    <li><em>{{catcher.interests.value}}</em></li>
+                    <li><strong>MORE INFO:</strong></li>
+                    <li><em><a href="{{catcher.developer_url}}">{{catcher.developer_url}}</a></em></li>
+                    <li><strong>CONTACT DETAILS:</strong></li>
+                    <li><em>{{catcher.email}}</em></li>
+                </ul>
+            </div>
+            <div class="card-action">
+                <span class="card-title activator grey-text text-darken-4 left-align">catches to date:<i class="material-icons right">more_vert</i></span>
+                <ul>
+                    {% for pitches_caught in catcher.pitches_caught %}
+
+                    <!--Need an if statement here for blank returns-->
+
+                    <li>{{ pitches_caught.proposal_name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title brand-logo grey-text text-darken-4">About me<i class="material-icons right">close</i></span>
+                <p>{{ catcher.developer_description }}</p>
+                <blockquote class="blocktheme-catcher">
+                    <span class="card-title brand-logo grey-text text-darken-4">Programming Experience</span>
+                    <ul>
+                        {% if catcher.frontend_interest.value == 'Yes' %}
+                        <li><strong>Front-end programming:</strong></li>
+                        <li>I am interested in front end development projects</li>
+                        <li>Front-end development skill level: <em>{{catcher.frontend_experience.value }}</em></li><br>
+                        {% endif %}
+                        {% if catcher.backend_interest.value == 'Yes' %}
+                        <li><strong>Back-end programming:</strong></li>
+                        <li>I am interested in back-end developmnt projects</li>
+                        <li>Back-end development skil level: <em>{{catcher.backend_experience.value }}</em></li><br>
+                        {% endif %}
+                        <li><strong>More info:</strong></li>
+                        <li>{{catcher.prog_languages}}</li><br>
+                    </ul>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <div class="col s8 offset-s4">
+        <a href='/delete_catcher/{{catcher.developer_name}}'>
+            <i class="material-icons medium left delete">delete_forever</i>
+        </a>        
+        <a href='/edit_catcher/{{catcher.developer_name}}'>
+            <i class="material-icons medium left">edit</i>
+        </a>
+    </div>
+</div>
+{% endfor %} 
+
+{% endblock %}

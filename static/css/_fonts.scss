@@ -3,23 +3,24 @@ h2,
 h3,
 h5 {
     color: $white;
-    // font-weight: 700;
-    // padding: 1rem;
-
 }
 
 h1 {
-    font-size: 2rem;
+  font-size: 2rem; 
 }
-
 
 nav ul a {
-    font-size: 1rem;
+  font-size: 1rem; 
 }
+
 
 .brand-logo {
     font-family: 'Jua', 'sans-serif';
     font-size: 2.5rem;
+}
+
+i.medium {
+    font-size: 2rem;
 }
 
 /*Form fonts*/
@@ -27,23 +28,7 @@ nav ul a {
     color: $white;
 }
 
+.delete {
+    color: $red-delete;
+}
 
-
-/*Input fields*/
-// label {
-//     font: {
-//         size: $sm-body !important;
-//         weight: $labels-weight !important;
-//     }
-//     color: $yellow-label !important;
-//     margin-right: 4rem;
-
-//     @media (min-width: 992px) {
-//         font: {
-//             size: 1.2rem !important;
-//             weight: $labels-weight !important;
-//         }
-//         margin-left: 5rem;
-//     }
-
-// }

@@ -31,11 +31,16 @@ nav ul a {
   font-family: 'Jua', 'sans-serif';
   font-size: 2.5rem; }
 
+i.medium {
+  font-size: 2rem; }
+
 /*Form fonts*/
 .select-wrapper {
   color: #fff; }
 
-/*Input fields*/
+.delete {
+  color: #ff4040; }
+
 .collapsible-body {
   background: #fff; }
 
@@ -49,11 +54,11 @@ nav ul a {
   box-shadow: 3px 4px 7px black; }
 
 .background-catchers {
-  background-color: #392bad;
+  background-color: #5d4ce8;
   opacity: 0.7; }
 
 .background-pitches {
-  background-color: #a29421;
+  background-color: rgba(255, 227, 157, 0.85);
   opacity: 0.7; }
 
 /*Margins*/
@@ -85,7 +90,7 @@ i.medium {
   font-size: 2rem; }
 
 div label {
-  color: #a29421 !important;
+  color: rgba(255, 227, 157, 0.85) !important;
   font-weight: 600; }
 
 textarea.materialize-textarea {
@@ -100,10 +105,20 @@ input {
   color: white; }
 
 .card {
-  background: rgba(255, 255, 255, 0.85) !important; }
+  background: rgba(255, 227, 157, 0.85); }
 
 .card .card-action {
-  background-color: #88ca35; }
+  background-color: #a08111; }
+
+img {
+  display: inline;
+  border-radius: 6px;
+  width: 50px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  opacity: 0.85;
+  box-shadow: 2px 2px 5px 1px #a08111; }
 
 body {
   background-size: cover;
@@ -116,23 +131,21 @@ form .material-icons {
   color: #fff !important;
   text-shadow: 3px 2px 4px black; }
 
-i.medium {
-  font-size: 2rem; }
-
 @media (min-width: 992px) {
   .reg-header {
     font-size: 3rem !important;
     line-height: 0 !important; } }
 
-.delete {
-  color: #ff4040;
-  font-size: 10rem; }
+.blocktheme-pitcher {
+  border-left: .5rem solid;
+  color: #88ca35; }
 
-.edit {
-  font-size: 10rem;
-  margin-bottom: 2rem; }
+.blocktheme-catcher {
+  border-left: .5rem solid;
+  color: #5d4ce8; }
 
-blockquote {
-  border-left: 0.5rem solid #88ca35; }
+.blocktheme-pitch {
+  border-left: .5rem solid;
+  color: #88ca35; }
 
 /*# sourceMappingURL=main.css.map */

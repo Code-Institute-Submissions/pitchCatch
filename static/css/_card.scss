@@ -1,7 +1,18 @@
 .card {
-    background: rgba(255, 255, 255, 0.85) !important;
+    background: $yellow;
 }
 
 .card .card-action {
-    background-color: $green;
+    background-color: $brown;
+}
+
+img {
+    display: inline;
+    border-radius: 6px;
+    width: 50px;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    opacity: 0.85;
+    box-shadow: 2px 2px 5px 1px $brown;
 }

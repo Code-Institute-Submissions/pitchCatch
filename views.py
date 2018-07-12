@@ -135,7 +135,7 @@ def pitcher_profile(movement_name):
 """
 Catcher Profile
 """
-@app.route('/catcher_profile/<developer_name', methods=['GET', 'POST'])
+@app.route('/catcher_profile/<developer_name>', methods=['GET', 'POST'])
 def catcher_profile(developer_name):
     catcher_profile = db_session.query(Catcher).filter_by(developer_name=developer_name)
     
