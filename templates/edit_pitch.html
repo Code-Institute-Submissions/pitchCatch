@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="row">
+
+    <!--Pitch registration form head banner-->
+    <div class=" col s12 background-pitches right-align margin-top-section banner">
+        <h5>pitch Registration</h5>
+    </div>
+
+    <!--Registration Form-->
+    <form method="POST" class="col s12" action="/edit_pitch/{{proposal_name}}" autocomplete="off" enctype="multipart/form-data">
+
+        <!--csrf token-->
+        {{ form.csrf_token }}
+        <div class="row">
+            <!--Form Text - Proposal-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">new_releases</i> 
+                {{ form.proposal_name.label }} 
+                {{ form.proposal_name }}
+            </div>
+
+            <!--Form Text Area - Proposal Outline-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">speaker_notes</i> 
+                {{ form.proposal_outline.label }} 
+                {{ form.proposal_outline(class="materialize-textarea") }}
+            </div>
+
+            <!--Form Select - Interests-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">priority_high</i> 
+                {{ form.interests.label }} 
+                {{ form.interests }}
+            </div>
+
+            <!--Form Select - Launch Date-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">event</i> 
+                {{ form.launch_date.label }} 
+                {{ form.launch_date }}
+            </div>
+
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2 hide">
+                <i class="material-icons medium right">people</i>
+                {{ form.pitcher_id }}                
+            </div>
+
+            <!--Submit Form button-->
+            <div class="col s12 center-align">
+                <button class="btn btn-large waves-effect waves-light" type="submit">Edit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

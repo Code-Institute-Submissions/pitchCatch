@@ -1,0 +1,105 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="row">
+
+    <!--Catcher registration head banner-->
+    <div class=" col sm12 background-catchers right-align margin-top-section banner">
+        <h5>Catcher Registration</h5>
+    </div>
+
+    <!--Registration form header-->
+    <form method="POST" class="col s12" action="/edit_catcher/{{developer_name}}" autocomplete="off" enctype="multipart/form-data">
+        
+        <!--csrf token-->
+        {{ form.csrf_token }}
+        <div class="row form-bground catcher-bground">
+            <!--Form Text Area - Name-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">person</i>
+                {{ form.developer_name.label }}
+                {{ form.developer_name }}
+            </div>
+
+            <!--Form Select - Region-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">public</i>
+                {{ form.region.label }}
+                {{ form.region }}
+            </div>
+
+            <!--Form Text Area - Description-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">assignment_ind</i>
+                {{ form.developer_description.label }}
+                {{ form.developer_description(class="materialize-textarea") }}
+            </div>
+
+            <!--Form Select - Interests-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">priority_high</i>
+                {{ form.interests.label }}
+                {{ form.interests }}
+            </div>
+
+            <!--Form Multiple Select - FrontEnd Interest-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">personal_video</i>
+                {{ form.frontend_interest.label }}
+                {{ form.frontend_interest }}
+            </div>
+
+            <!--Form Select - FrontEnd Experience-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">desktop_windows</i>
+                {{ form.frontend_experience.label }}
+                {{ form.frontend_experience }}
+            </div>
+
+            <!--Form Multiple Select - BackEnd Interest-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">settings_applications</i>
+                {{ form.backend_interest.label }}
+                {{ form.backend_interest }}
+            </div>
+
+            <!--Form Select - BackEnd Experience-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">settings_applications</i>
+                {{ form.backend_experience.label }}
+                {{ form.backend_experience }}
+            </div>
+
+            <!--Form Text Area - Programming Languages-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">developer_mode</i>
+                {{ form.prog_languages.label }}
+                {{ form.prog_languages(class="materialize-textarea") }}
+            </div>
+           
+            <!--Form Text Input - URL-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">web</i>
+                {{ form.developer_url.label }}
+                {{ form.developer_url }}
+            </div>
+
+            <!--Form Text Input - email-->
+            <div class="input-field col s12 m8 offset-m2 l5">
+                <i class="material-icons medium right">contact_mail</i>
+                {{ form.email.label }}
+                {{ form.email }}
+            </div>
+        
+            <!--Submit Form button-->
+            <div class="col s12 center-align">
+                <button class="btn btn-large waves-effect waves-light" type="submit">Register
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
