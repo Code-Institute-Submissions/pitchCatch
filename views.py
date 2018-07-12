@@ -140,3 +140,15 @@ def catcher_profile(developer_name):
     catcher_profile = db_session.query(Catcher).filter_by(developer_name=developer_name)
     
     return render_template('catcher_profile.html', catcher_profile=catcher_profile)
+
+"""
+Pitch Profile
+"""
+# Pitch Profile
+@app.route('/pitch_profile/<proposal_name>', methods=['GET', 'POST'])
+def get_pitch_profile(proposal_name):
+    pitches_count = db_session.query(Pitch).count()
+    pitches_list = db_session.query(Pitch).filter_by(proposal_name=proposal_name).first()
+    pitcher_all = db_session.query(Pitcher).all()    
+    catcher_select = db_session.query(Catcher).all()
+    return render_template('pitch_profile.html', pitcher_all=pitcher_all, pitches_count=pitches_count, pitches_list=pitches_list, catcher_select=catcher_select)
