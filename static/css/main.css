@@ -61,6 +61,18 @@ i.medium {
   background-color: rgba(255, 227, 157, 0.85);
   opacity: 0.7; }
 
+.blocktheme-pitcher {
+  border-left: .5rem solid;
+  color: #88ca35; }
+
+.blocktheme-catcher {
+  border-left: .5rem solid;
+  color: #5d4ce8; }
+
+.blocktheme-pitch {
+  border-left: .5rem solid;
+  color: #88ca35; }
+
 /*Margins*/
 .margin-top-main {
   margin-top: 10rem; }
@@ -135,17 +147,5 @@ form .material-icons {
   .reg-header {
     font-size: 3rem !important;
     line-height: 0 !important; } }
-
-.blocktheme-pitcher {
-  border-left: .5rem solid;
-  color: #88ca35; }
-
-.blocktheme-catcher {
-  border-left: .5rem solid;
-  color: #5d4ce8; }
-
-.blocktheme-pitch {
-  border-left: .5rem solid;
-  color: #88ca35; }
 
 /*# sourceMappingURL=main.css.map */

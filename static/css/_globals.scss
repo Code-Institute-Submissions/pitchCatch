@@ -15,6 +15,21 @@
     opacity: $opacity;
 }
 
+.blocktheme-pitcher {
+    @include blockqline;
+    color: $green;
+}
+
+.blocktheme-catcher {
+    @include blockqline;
+    color: $purple;
+}
+
+.blocktheme-pitch {
+    @include blockqline;
+    color: $green;
+}
+
 /*Margins*/
 .margin-top-main {
     margin-top: 10rem;

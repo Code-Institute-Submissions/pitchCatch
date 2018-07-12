@@ -40,17 +40,4 @@ form .material-icons {
     }
 }
 
-.blocktheme-pitcher {
-    @include blockqline;
-    color: $green;
-}
 
-.blocktheme-catcher {
-    @include blockqline;
-    color: $purple;
-}
-
-.blocktheme-pitch {
-    @include blockqline;
-    color: $green;
-}
