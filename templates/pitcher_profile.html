@@ -14,10 +14,6 @@
             <h1>{{pitcher.movement_name}}</h1>
         </blockquote>
     </div>
-
-
-    <!--testing materilize card-->
-
     <div class="col s12 m8 profile-card">
         <div class="card sticky-action">
             <div>
@@ -39,9 +35,13 @@
                 <ul>
                     {% for throw in pitcher.throw %}
 
-                    <!--Need an if statement here for blank returns-->
-
+                    <!--if statement needed for blank-->
+                    {% if pitcher.throw == Null %}
+                    <li>None</li>
+                    {% else %}
+                    
                     <li>{{ throw.proposal_name }}</li>
+                    {% endif %}
                     {% endfor %}
                 </ul>
             </div>

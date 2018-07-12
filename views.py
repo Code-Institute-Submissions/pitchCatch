@@ -151,4 +151,8 @@ def get_pitch_profile(proposal_name):
     pitches_list = db_session.query(Pitch).filter_by(proposal_name=proposal_name).first()
     pitcher_all = db_session.query(Pitcher).all()    
     catcher_select = db_session.query(Catcher).all()
-    return render_template('pitch_profile.html', pitcher_all=pitcher_all, pitches_count=pitches_count, pitches_list=pitches_list, catcher_select=catcher_select)
+    return render_template('pitch_profile.html', 
+                            pitcher_all=pitcher_all, 
+                            pitches_count=pitches_count, 
+                            pitches_list=pitches_list, 
+                            catcher_select=catcher_select)

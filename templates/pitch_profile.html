@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="row margin-top">
+    <div class="col s12 background-pitches left-align">
+        <h1>pitch Profile</h1>
+    </div>
+    <div class="col s12 m4 left-align profile-name">
+        <blockquote class="blocktheme-pitch">
+            <h1>{{pitches_list.proposal_name}}</h1>
+        </blockquote>
+        
+        <form method="POST" action="/catch_pitch/{{pitches_list.proposal_name}}">
+            <div class="input-field hide">
+                <i class="material-icons large right">new_releases</i>
+                <select id="pitch" name="pitch">
+                     <option value="{{pitches_list.proposal_name}}">{{ pitches_list.proposal_name }}</option>
+                </select>
+            </div>
+            <div class="input-field col s12">
+                
+                <!--Option Dropdown - Catcher-->
+                <i class="material-icons medium right">person</i>
+                <select id="catcher" name="catcher">
+                    <option value="" disabled selected>Enter your name</option>
+                    {% for catcher in catcher_select | sort(attribute='developer_name') %}
+                    <option value="{{catcher.developer_name}}">{{catcher.developer_name}}</option>
+                    {% endfor %}
+                </select>
+                <label>Interested in exploring this project?<br></label>
+            </div>
+            <button class="btn btn-medium waves-effect waves-light" type="submit" name="action">Catch!
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+    <div class="col s12 m8 profile-card">
+        <div class="card sticky-action">
+            <div>
+                <div class="brand-logo center-align"><img src="/static/images/pitch.png">Summary</div>
+                <hr>
+                <ul class="center-align">
+                    <li><strong>PITCHER:</strong></li>
+                    <li><em>{{ pitches_list.pitcher.movement_name }}</em></li>
+                    <li><strong>PITCH TOPIC:</strong></li>
+                    <li><em>{{pitches_list.interests.value }}</em></li>
+                    <li><strong>CURRENT CATCHERS:</strong></li>
+                    <li><em>{{ pitches_list.</em></li>
+                    <li><strong>IDEAL LAUNCH DATE:</strong></li>
+                    <li><em>{{pitches_list.launch_date}}</em></li>
+                </ul>
+            </div>
+            <div class="card-action">
+                <span class="card-title activator grey-text text-darken-4 left-align">Read our pitch!<i class="material-icons right">more_vert</i></span>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title brand-logo grey-text text-darken-4">Our pitch:<i class="material-icons right">close</i></span>
+                <p>{{pitches_list.proposal_outline}}</p><br><br>
+            </div>
+        </div>
+    </div>
+    <div class="col s8 offset-s4">
+            <a href='/edit_pitch/{{pitches_list.proposal_name}}'>
+                <i class="material-icons medium left">edit</i>
+            </a>
+            <a href='/delete_pitch/{{pitches_list.proposal_name}}'>
+                <i class="material-icons medium left delete">delete_forever</i>
+            </a>
+    </div>
+        
+        
+    <div class="col s12">
+        
+    </div>
+</div>
+{% endblock %}

@@ -58,7 +58,7 @@ i.medium {
   opacity: 0.7; }
 
 .background-pitches {
-  background-color: rgba(255, 227, 157, 0.85);
+  background-color: rgba(216, 50, 50, 0.85);
   opacity: 0.7; }
 
 .blocktheme-pitcher {
@@ -71,7 +71,7 @@ i.medium {
 
 .blocktheme-pitch {
   border-left: .5rem solid;
-  color: #88ca35; }
+  color: rgba(216, 50, 50, 0.85); }
 
 /*Margins*/
 .margin-top-main {

@@ -11,7 +11,7 @@
 }
 
 .background-pitches {
-    background-color: $yellow;
+    background-color: $red;
     opacity: $opacity;
 }
 
@@ -27,7 +27,7 @@
 
 .blocktheme-pitch {
     @include blockqline;
-    color: $green;
+    color: $red;
 }
 
 /*Margins*/
