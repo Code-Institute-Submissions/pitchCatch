@@ -98,13 +98,13 @@ class Pitch(Base):
 
     
     def __init__(self, proposal_name=None, proposal_outline=None,
-        interests=None, launch_date=None, pitcher_id=None, pitcher=None):
+        interests=None, launch_date=None, pitcher_id=None):
         self.proposal_name = proposal_name
         self.proposal_outline = proposal_outline
         self.interests = interests
         self.launch_date = launch_date
         self.pitcher_id = pitcher_id
-        self.pitcher = pitcher
+    
     
     def __repr__(self):
         return '<Pitch %r>' % (self.proposal_name)
