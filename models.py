@@ -29,6 +29,7 @@ class Pitcher(Base):
     __tablename__ = 'pitchers'
     
     id = sa.Column(Integer, primary_key=True, autoincrement=True)
+    
     movement_name = sa.Column(
         String(100), nullable=False, unique=True,
         info={'label': 'Movement name'}
@@ -75,6 +76,7 @@ class Pitch(Base):
     __tablename__ = 'pitches'
     
     id = sa.Column(Integer, primary_key=True, autoincrement=True)
+    
     proposal_name = sa.Column(
         String(200), nullable=False, unique=True,
         info={'label': 'Name of proposal'}
@@ -91,16 +93,17 @@ class Pitch(Base):
         Date,
         info={'label': 'Ideal launch date'}
     )
-    pitcher_id = sa.Column(sa.Integer, sa.ForeignKey('pitchers.id'), nullable=False)
+    pitcher_id = sa.Column(sa.Integer, sa.ForeignKey('pitchers.id'), nullable=True)
     pitcher = sa.orm.relationship('Pitcher', backref=sa.orm.backref('throw', lazy=True))
 
     
     def __init__(self, proposal_name=None, proposal_outline=None,
-        interests=None, launch_date=None, pitcher=None):
+        interests=None, launch_date=None, pitcher_id=None, pitcher=None):
         self.proposal_name = proposal_name
         self.proposal_outline = proposal_outline
         self.interests = interests
         self.launch_date = launch_date
+        self.pitcher_id = pitcher_id
         self.pitcher = pitcher
     
     def __repr__(self):
@@ -114,6 +117,7 @@ class Catcher(Base):
     __tablename__ = 'catchers'
     
     id = sa.Column(Integer, primary_key=True, autoincrement=True)
+    
     developer_name = sa.Column(
         String(150), nullable=False, unique=True,
         info={'label': 'Pick a username'}
