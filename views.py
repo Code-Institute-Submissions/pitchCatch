@@ -31,6 +31,21 @@ def index():
                                         pitch_count=str(pitch_count))
 
 
+"""DELETE VIEWS"""
+
+"""
+Delete Pitcher
+"""
+@app.route('/delete_pitcher/<movement_name>', methods=['GET', 'POST'])
+def delete_pitcher(movement_name):
+        pitcher_delete = db_session.query(Pitcher).filter_by(movement_name=movement_name).one()
+        db_session.delete(pitcher_delete)
+        db_session.commit()
+        return redirect(url_for('index'))
+
+
+
+
 
 # """REGISTRATION VIEWS"""
 
