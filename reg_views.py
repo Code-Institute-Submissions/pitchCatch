@@ -70,23 +70,22 @@ Pitch Registration
 def reg_pitch():
     
     form = PitchForm(request.form)
-    form.pitcher_id.choices = [(g.id, g.movement_name) for g in Pitcher.query.order_by('movement_name')]
 
-    
     if request.method == 'POST':
-        the_pitcher = db_session.query(Pitcher).filter_by(movement_name=request.form['pitcher_id']).one()
 
         pitch = Pitch(
             form.proposal_name.data,
             form.proposal_outline.data,
             form.interests.data,
             form.launch_date.data,
-            pitcher_id=the_pitcher.id
+            form.pitcher_id.data
             )
+        print(pitch.pitcher_id)
+        print(pitch.launch_date)
         db_session.add(pitch)
         db_session.commit()
-
-    #     # Change this to redirect to an acknowledgement page
+        
+        # Change this to redirect to an acknowledgement page
         return redirect(url_for('index'))
 
     sponsor = db_session.query(Pitcher).all()
