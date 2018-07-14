@@ -31,12 +31,17 @@ Pitch Profile
 # Pitch Profile
 @app.route('/pitch_profile/<proposal_name>', methods=['GET', 'POST'])
 def pitch_profile(proposal_name):
-    pitches_count = db_session.query(Pitch).count()
     pitches_list = db_session.query(Pitch).filter_by(proposal_name=proposal_name).first()
-    pitcher_all = db_session.query(Pitcher).all()    
+    
+    # caught_list = db_session.query(caught).filter_by(pitch_id=pitches_list.id).all()
+    
+    
+
+
+    
     catcher_select = db_session.query(Catcher).all()
+    
     return render_template('pitch_profile.html', 
-                            pitcher_all=pitcher_all, 
-                            pitches_count=pitches_count, 
-                            pitches_list=pitches_list, 
-                            catcher_select=catcher_select)
+                            # caught_list=caught_list,
+                            catcher_select=catcher_select,
+                            pitches_list=pitches_list)
