@@ -1,0 +1,79 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="row margin-top">
+    <div class="col s12 background-pitchers left-align">
+        <h1>pitcher search</h1>
+    </div>
+    <div class="col s12 m4">
+        <div class="background-pitchers">
+            <p>Browse pitchers...</p>
+        </div>
+        <form method="POST" class="margin-header" action="/pitchers" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+
+            <!--Form Select - Interests-->
+            <div class="input-field">
+                <i class="material-icons medium right">priority_high</i>
+                <label>Search by interests</label>
+                {{ form.interests }} 
+            </div>
+
+            <!--Form Select - Region-->
+            <div class="input-field">
+                <i class="material-icons medium right">public</i>
+               <label>Search by region</label>
+               {{ form.region }}
+            </div>
+            
+            <!--Option Dropdown - Sponsor-->
+            <div class="input-field">
+                <i class="material-icons medium right">people</i>
+                <select id="movement_name" name="movement_name">
+                <option value="---" selected>Select your name</option>
+                {% for pitcher in pitchers_list | select(attribute='movement_name') %}
+                <option value="{{pitcher.movement_name}}">{{pitcher.movement_name}}</option>
+                {% endfor %}
+                </select>
+                <label>Search by pitcher name</label>
+            </div>
+            
+            <!--Search button-->
+            <button class="btn btn-medium waves-effect waves-light" type="submit" name="action">Search
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+     </div>
+    <div class="col s12 m8">
+        <h5>{{pitcher_count}} pitchers matched your search</h5>
+        
+        <!--Search Results in table display-->
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Interests</th>
+                    <th>Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pitcher in pitchers_search %}
+                <tr>
+                    <td><a href='/pitcher_profile/{{pitcher.movement_name}}'>{{ pitcher.movement_name }}</a></td>
+                    <td>{{ pitcher.interests.value }}</td>
+                    <td>{{ pitcher.region.value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <!--Reset Search Butonn-->
+        <a href='/pitchers'><button class="btn btn-small waves-effect waves-light red" type="submit" name="action">Reset
+            <i class="material-icons right">redo</i></button></a>
+    </div>
+
+
+</div>
+
+{% endblock %}
