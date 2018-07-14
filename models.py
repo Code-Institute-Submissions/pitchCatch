@@ -15,8 +15,7 @@ from database import Base
 """
 Helper table used for many to many relationship for Caught pitches
 """
-caught = sa.Table('caught',
-    Base.metadata,
+caught = sa.Table('caught',Base.metadata,
     sa.Column('catcher_id', sa.Integer, sa.ForeignKey('catchers.id')),
     sa.Column('pitch_id', sa.Integer, sa.ForeignKey('pitches.id'))
     )
@@ -141,7 +140,7 @@ class Catcher(Base):
     )
     backend_interest = sa.Column(
         ChoiceType(YN), nullable=False,
-        info={'label': 'Interested in Front-end development?'}
+        info={'label': 'Interested in Back-end development?'}
     )
     frontend_experience = sa.Column(
         ChoiceType(EXPERIENCE), nullable=False,
