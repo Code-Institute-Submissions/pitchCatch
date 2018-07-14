@@ -1,6 +1,4 @@
-{% extends 'base.html' %} 
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="row margin-top">
     <div class="col s12 background-pitches left-align">
@@ -10,7 +8,7 @@
         <blockquote class="blocktheme-pitch">
             <h1>{{pitches_list.proposal_name}}</h1>
         </blockquote>
-        
+
         <form method="POST" action="/catch_pitch/{{pitches_list.proposal_name}}">
             <div class="input-field hide">
                 <i class="material-icons large right">new_releases</i>
@@ -19,7 +17,7 @@
                 </select>
             </div>
             <div class="input-field col s12">
-                
+
                 <!--Option Dropdown - Catcher-->
                 <i class="material-icons medium right">person</i>
                 <select id="catcher" name="catcher">
@@ -46,11 +44,12 @@
                     <li><strong>PITCH TOPIC:</strong></li>
                     <li><em>{{pitches_list.interests.value }}</em></li>
                     <li><strong>CURRENT CATCHERS:</strong></li>
-                    
+
+                    <!--Render list of catchers using 'caught' helper table-->
                     {% for catch in pitches_list.pitch_catch %}
                     <li><em>{{ catch.developer_name }}</em></li>
                     {% endfor %}
-                    
+
                     <li><strong>IDEAL LAUNCH DATE:</strong></li>
                     <li><em>{{pitches_list.launch_date}}</em></li>
                 </ul>
@@ -65,17 +64,17 @@
         </div>
     </div>
     <div class="col s8 offset-s4">
-            <a href='/edit_pitch/{{pitches_list.proposal_name}}'>
+        <a href='/edit_pitch/{{pitches_list.proposal_name}}'>
                 <i class="material-icons medium left">edit</i>
             </a>
-            <a href='/delete_pitch/{{pitches_list.proposal_name}}'>
+        <a href='/delete_pitch/{{pitches_list.proposal_name}}'>
                 <i class="material-icons medium left delete">delete_forever</i>
             </a>
     </div>
-        
-        
+
+
     <div class="col s12">
-        
+
     </div>
 </div>
 {% endblock %}

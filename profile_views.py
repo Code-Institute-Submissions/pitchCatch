@@ -32,13 +32,6 @@ Pitch Profile
 @app.route('/pitch_profile/<proposal_name>', methods=['GET', 'POST'])
 def pitch_profile(proposal_name):
     pitches_list = db_session.query(Pitch).filter_by(proposal_name=proposal_name).first()
-    
-    # caught_list = db_session.query(caught).filter_by(pitch_id=pitches_list.id).all()
-    
-    
-
-
-    
     catcher_select = db_session.query(Catcher).all()
     
     return render_template('pitch_profile.html', 

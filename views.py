@@ -32,20 +32,29 @@ def index():
 
 
 
-"""
-Catch Pitch
-"""
-@app.route('/catch_pitch/<proposal_name>', methods=['GET', 'POST'])
-def catch_pitch(proposal_name):
-    pitch = db_session.query(Pitch).filter_by(proposal_name=request.form['pitch']).first()
-    catcher = db_session.query(Catcher).filter_by(developer_name=request.form['catcher']).first()
+
+
+
+
+
+
+
+# """
+# Catch Pitch
+# """
+# @app.route('/catch_pitch/<proposal_name>', methods=['GET', 'POST'])
+# def catch_pitch(proposal_name):
+#     pitch = db_session.query(Pitch).filter_by(proposal_name=request.form['pitch']).first()
+#     catcher = db_session.query(Catcher).filter_by(developer_name=request.form['catcher']).first()
     
 
-    if catcher not in pitch.pitch_catch:
-        pitch.pitch_catch.append(catcher)
-        db_session.commit()
+#     # Need exception to catch duplicates
+
+#     if catcher not in pitch.pitch_catch:
+#         pitch.pitch_catch.append(catcher)
+#         db_session.commit()
         
-        return redirect(url_for('index'))
+#         return redirect(url_for('index'))
 
 
 
