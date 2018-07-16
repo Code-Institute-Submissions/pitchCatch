@@ -5,12 +5,12 @@ from forms import PitchForm, PitcherForm, CatcherForm
 from database import db_session
 
 
-# Queries dict
-query_dict = {}
+# # Queries dict
+# query_dict = {}
 
-# Query create dict items
-def query(k,v):
-    query_dict[k]=v
+# # Query create dict items
+# def query(k,v):
+#     query_dict[k]=v
 
 
 @app.teardown_appcontext
@@ -32,7 +32,41 @@ def index():
 
 
 
+# Query Pitchers Page
+# @app.route('/pitchers', methods=['GET', 'POST'])
+# def get_pitchers():
+#     form = PitcherForm(request.form)
+    
+#     if request.method == 'POST':
+#         #  Search dict
+#         kwargs = {}
+        
+#         query(k='interests', v=request.form['interests'])
+#         query(k='region', v=request.form['region'])
+#         query(k='movement_name', v=request.form['movement_name'])
+        
+#         # Remove default values from query filter
+#         kwargs = {k:v for k,v in query_dict.items() if v != '---'}
+    
+#         pitchers_search = db_session.query(Pitcher).filter_by(**kwargs).order_by(Pitcher.movement_name)
+#         pitcher_count = db_session.query(Pitcher).filter_by(**kwargs).count()
+        
+#         # Clear search dict
+#         kwargs.clear()
+        
+#         return render_template('pitchers_search.html', form=form, pitchers_search=pitchers_search, pitcher_count=pitcher_count)
 
+#     pitchers_all = db_session.query(Pitcher).all()
+#     pitcher_count = db_session.query(Pitcher).count()
+#     pitchers_list = db_session.query(Pitcher).filter_by(movement_name=Pitcher.movement_name).order_by(Pitcher.movement_name)
+#     pitchers_reduced_list = db_session.query(Pitcher).filter_by(movement_name=Pitcher.movement_name).order_by(Pitcher.movement_name).limit(2)
+    
+#     return render_template('pitchers.html', 
+#                             form=form,
+#                             pitchers_all=pitchers_all,
+#                             pitchers_list=pitchers_list,  
+#                             pitchers_reduced_list=pitchers_reduced_list, 
+#                             pitcher_count=str(pitcher_count))
 
 
 

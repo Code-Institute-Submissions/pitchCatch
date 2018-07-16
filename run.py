@@ -22,6 +22,7 @@ from profile_views import *
 from edit_views import *
 from del_views import *
 from catch_views import *
+from search_views import *
 
 
 if __name__ == "__main__":

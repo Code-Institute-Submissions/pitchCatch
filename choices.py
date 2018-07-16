@@ -1,5 +1,5 @@
 INTERESTS = [
-    ('', '---'),
+    ('---', '---'),
     ('promoting social and economic equality', 'promoting social and economic equality'),
     ('protecting the right to privacy', 'protecting the right to privacy'),
     ('exposing corruption and maladministration', 'exposing corruption and maladministration'),
@@ -9,7 +9,7 @@ INTERESTS = [
 ]
 
 REGIONS = [
-    ('', '---'),
+    ('---', '---'),
     ('Asia', 'Asia'),
     ('Africa', 'Africa'),
     ('Europe', 'Europe'),
@@ -19,14 +19,14 @@ REGIONS = [
 ] 
 
 EXPERIENCE = [
-    ('', '---'),
+    ('---', '---'),
     ('Beginner', 'Beginner'),
     ('Intermediate', 'Intermediate'),
     ('Experienced', 'Experienced')
 ]
 
 YN = [
-    ('', '---'),
+    ('---', '---'),
     ('Yes', 'Yes'),
     ('No', 'No')
 ]

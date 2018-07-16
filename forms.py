@@ -1,9 +1,10 @@
 from models import Pitch, Pitcher, Catcher
 from wtforms_alchemy import ModelForm
+# from wtforms import Form, StringField, SelectField
 
 
 """
-Pitcher form
+Pitcher Form
 """
 class PitcherForm(ModelForm):
     class Meta:
@@ -11,7 +12,7 @@ class PitcherForm(ModelForm):
 
 
 """
-PitchForm
+Pitch Form
 """
 class PitchForm(ModelForm):
     class Meta:
@@ -20,7 +21,7 @@ class PitchForm(ModelForm):
         
 
 """
-CatcherForm
+Catcher Form
 """
 class CatcherForm(ModelForm):
     class Meta:
