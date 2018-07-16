@@ -1,15 +1,19 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block content %}
+
 <div class="row margin-top">
 
     <div class="col s12 background-pitchers left-align">
         <h1>pitcher search</h1>
     </div>
 
-    <div class="col s12 m4">
+    <div class="col s12 l4 profile-name border-pitchers">
 
-        <div class="background-pitchers">
-            <p>Browse pitchers...</p>
-        </div>
+
+        <h5 class='search-heading'>Browse pitchers...</h5>
+
+
 
         <form method="POST" class="margin-header" action="/pitchers" enctype="multipart/form-data">
             {{ form.csrf_token }}
@@ -18,7 +22,6 @@
             <div class="input-field">
                 <i class="material-icons medium right">priority_high</i>
                 <label>Search by interests</label>
-                
                 {{ form.interests }} 
             </div>
 
@@ -43,29 +46,27 @@
                 <label>Search by pitcher name</label>
             </div>
 
-            <button class="btn btn-medium waves-effect waves-light" type="submit" name="action">Search
+            <button class="btn btn-medium waves-effect waves-light" type="submit">Search
                 <i class="material-icons right">send</i>
             </button>
-  
         </form>
      </div>
     
-    <div class="col s12 m8">
-
-            <h5>{{pitcher_count}} social movements & campaigns are registered with pitchCatch</h5>
+    <div class="col s12 l8 profile-card">
+        <h5 class='search-heading'>{{pitcher_count}} pitchers are registered with pitchCatch</h5>
          
 
         <table class="highlight">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th class="pitcher">Name</th>
                     <th>Interests</th>
                     <th>Region</th>
                 </tr>
             </thead>
 
             <tbody>
-                {% for pitcher in pitchers_all %}
+                {% for pitcher in pitchers_list %}
                 <tr>
                     <td><a href='/pitcher_profile/{{pitcher.movement_name}}'>{{ pitcher.movement_name }}</a></td>
                     <td>{{ pitcher.interests.value }}</td>

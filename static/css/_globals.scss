@@ -1,3 +1,18 @@
+/* table font color*/
+
+td, th {
+    color: #c13f3f;
+    font-weight: 600;
+}
+
+td a,
+.pitcher {
+    color: $green;
+}
+
+
+
+
 /*Background themes*/
 .background-pitchers {
     background-color: $green;
@@ -13,6 +28,10 @@
 .background-pitches {
     background-color: $red;
     opacity: $opacity;
+}
+
+.border-pitchers {
+    border-right: 2px solid $green;
 }
 
 .blocktheme-pitcher {
