@@ -52,3 +52,41 @@ def search_pitchers():
                             form=form,
                             pitchers_list=pitchers_list,  
                             pitcher_count=str(pitcher_count))
+
+"""
+Catchers Search Function
+"""
+# Query Catchers
+@app.route('/catchers', methods=['GET', 'POST'])
+def search_catchers():
+    
+    form = CatcherForm(request.form)
+    
+    if request.method == 'POST':
+
+        query('region', request.form['region'])
+        query('interests', request.form['interests'])
+        query('frontend_experience', request.form['frontend_experience'])
+        query('backend_experience', request.form['backend_experience'])
+        query('developer_name', request.form['developer_name'])
+        
+        kwargs = {k:v for k,v in query_dict.items() if v != '---'}
+
+        catchers_all = db_session.query(Catcher).all()
+        catcher_count = db_session.query(Catcher).filter_by(**kwargs).count()
+        catchers_search = db_session.query(Catcher).filter_by(**kwargs).order_by(Catcher.developer_name)      
+        
+        return render_template('catchers_search.html', 
+                        form=form, 
+                        catchers_all=catchers_all,
+                        catchers_search=catchers_search, 
+                        catcher_count=catcher_count)
+    
+    catcher_count = db_session.query(Catcher).count()
+    catchers_list = db_session.query(Catcher).filter_by(developer_name=Catcher.developer_name).order_by(Catcher.developer_name)
+    return render_template('catchers.html', 
+                            catchers_list=catchers_list, 
+                            catcher_count=catcher_count, 
+                            form=form)
+
+
