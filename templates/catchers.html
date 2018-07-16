@@ -1,0 +1,87 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="row margin-top">
+    <div class="col s12 background-catchers left-align">
+        <h1>catcher search</h1>
+    </div>
+    <div class="col s12 l4 profile-name background-catchers">
+        <h5 class='search-heading'>Browse catchers...</h5>
+        
+        <!--catcher Search Form -->
+        <form method="POST" class="margin-header" action="/catchers" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+
+            <!--Form Select - Region-->
+            <div class="input-field">
+                <i class="material-icons medium right">public</i>
+                <label>Search by region</label>
+                {{ form.region }}
+            </div>
+
+            <!--Form Select - Interests-->
+            <div class="input-field">
+                <i class="material-icons medium right">priority_high</i>
+                <label>Search by theme</label>
+                {{ form.interests }}
+            </div>
+            
+            <!--Form Select - FrontEnd Experience-->
+            <div class="input-field">
+                <i class="material-icons medium right">desktop_windows</i>
+                <label>Front-end programming experience</label>
+                {{ form.frontend_experience }}
+            </div>
+
+            <!--Form Select - BackEnd Experience-->
+            <div class="input-field">
+                <i class="material-icons medium right">settings_applications</i>
+                <label>Back-end programming experience</label>
+                {{ form.backend_experience }}
+            </div>
+            
+            <!--Option Dropdown - Sponsor-->
+            <div class="input-field">
+                <i class="material-icons medium right">people</i>
+                <select id="developer_name" name="developer_name">
+                <option value="---" selected>Select name</option>
+                 
+                {% for catcher in catchers_list | select(attribute='developer_name') %}
+                <option value="{{catcher.developer_name}}">{{catcher.developer_name}}</option>
+                {% endfor %}
+                </select>
+                <label>Search by catcher name</label>
+            </div>
+            <button class="btn btn-medium waves-effect waves-light" type="submit">Search
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+     </div>
+    
+    <div class="col s12 l7 offset-l1 profile-card">
+        <h5 class='search-heading'>{{catcher_count}} catchers are registered with pitchCatch</h5>
+        
+        <!--Table for displaying catchers-->
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th class="thead">Name</th>
+                    <th class="thead">Interests</th>
+                    <th class="thead">Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for catcher in catchers_list %}
+                <tr>
+                    <td><a href='/catcher_profile/{{catcher.developer_name}}'>{{ catcher.developer_name }}</a></td>
+                    <td>{{ catcher.interests.value }}</td>
+                    <td>{{ catcher.region.value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

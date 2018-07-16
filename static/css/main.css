@@ -56,30 +56,34 @@ td, th {
   color: #c13f3f;
   font-weight: 600; }
 
-td a,
-.pitcher {
-  color: #88ca35; }
+td a {
+  color: #0690f5; }
+
+.thead {
+  color: #fff; }
 
 /*Background themes*/
 .background-pitchers {
-  background-color: #88ca35;
+  background-color: #375610;
   opacity: 0.7;
   box-shadow: 3px 4px 7px black; }
 
 .background-catchers {
-  background-color: #5d4ce8;
-  opacity: 0.7; }
+  background-color: #281b96;
+  opacity: 0.7;
+  box-shadow: 3px 4px 7px black; }
 
 .background-pitches {
   background-color: rgba(216, 50, 50, 0.85);
-  opacity: 0.7; }
+  opacity: 0.7;
+  box-shadow: 3px 4px 7px black; }
 
 .border-pitchers {
-  border-right: 2px solid #88ca35; }
+  border-right: 2px solid #375610; }
 
 .blocktheme-pitcher {
   border-left: .5rem solid;
-  color: #88ca35; }
+  color: #375610; }
 
 .blocktheme-catcher {
   border-left: .5rem solid;
@@ -95,6 +99,9 @@ td a,
 
 .margin-top-section {
   margin-top: 5rem; }
+
+.top-margin {
+  margin-top: 2rem; }
 
 .profile-name {
   margin-top: 20%; }

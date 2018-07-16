@@ -5,12 +5,13 @@ td, th {
     font-weight: 600;
 }
 
-td a,
-.pitcher {
-    color: $green;
+td a {
+    color: #0690f5;
 }
 
-
+.thead {
+    color: $white;
+}
 
 
 /*Background themes*/
@@ -21,13 +22,15 @@ td a,
 }
 
 .background-catchers {
-    background-color: $purple;
+    background-color: $blue;
     opacity: $opacity;
+    box-shadow: $box-shadow;
 }
 
 .background-pitches {
     background-color: $red;
     opacity: $opacity;
+    box-shadow: $box-shadow;
 }
 
 .border-pitchers {
@@ -56,6 +59,10 @@ td a,
 
 .margin-top-section {
     margin-top: 5rem;
+}
+
+.top-margin {
+    margin-top: 2rem;
 }
 
 .profile-name {

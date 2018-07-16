@@ -3,18 +3,13 @@
 {% block content %}
 
 <div class="row margin-top">
-
     <div class="col s12 background-pitchers left-align">
         <h1>pitcher search</h1>
     </div>
-
-    <div class="col s12 l4 profile-name border-pitchers">
-
-
+    <div class="col s12 l4 profile-name background-pitchers">
         <h5 class='search-heading'>Browse pitchers...</h5>
-
-
-
+        
+        <!--Pitcher Search Form -->
         <form method="POST" class="margin-header" action="/pitchers" enctype="multipart/form-data">
             {{ form.csrf_token }}
 
@@ -28,16 +23,15 @@
             <!--Form Select - Region-->
             <div class="input-field">
                 <i class="material-icons medium right">public</i>
-               <label>Search by region</label>
-               {{ form.region }}
+                <label>Search by region</label>
+                {{ form.region }}
             </div>
-
-
+            
+            <!--Option Dropdown - Sponsor-->
             <div class="input-field">
-                <!--Option Dropdown - Sponsor-->
                 <i class="material-icons medium right">people</i>
                 <select id="movement_name" name="movement_name">
-                <option value="---" selected>Select your name</option>
+                <option value="---" selected>Select name</option>
                  
                 {% for pitcher in pitchers_list | select(attribute='movement_name') %}
                 <option value="{{pitcher.movement_name}}">{{pitcher.movement_name}}</option>
@@ -45,26 +39,24 @@
                 </select>
                 <label>Search by pitcher name</label>
             </div>
-
             <button class="btn btn-medium waves-effect waves-light" type="submit">Search
                 <i class="material-icons right">send</i>
             </button>
         </form>
      </div>
     
-    <div class="col s12 l8 profile-card">
+    <div class="col s12 l7 offset-l1 profile-card">
         <h5 class='search-heading'>{{pitcher_count}} pitchers are registered with pitchCatch</h5>
-         
-
+        
+        <!--Table for displaying pitchers-->
         <table class="highlight">
             <thead>
                 <tr>
-                    <th class="pitcher">Name</th>
-                    <th>Interests</th>
-                    <th>Region</th>
+                    <th class="thead">Name</th>
+                    <th class="thead">Interests</th>
+                    <th class="thead">Region</th>
                 </tr>
             </thead>
-
             <tbody>
                 {% for pitcher in pitchers_list %}
                 <tr>
@@ -76,8 +68,6 @@
             </tbody>
         </table>
     </div>
-
-
 </div>
 
 {% endblock %}
