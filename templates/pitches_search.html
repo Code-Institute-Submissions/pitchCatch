@@ -1,0 +1,69 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="row margin-top">
+    <div class="col s12 background-pitches left-align">
+        <h1>pitch search</h1>
+    </div>
+    <div class="col s12 l4 profile-name background-pitches">
+        <h5 class='search-heading'>Browse pitches...</h5>
+        
+        <!--pitch Search Form -->
+        <form method="POST" class="margin-header" action="/pitches" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+
+            <!--Form Select - Interests-->
+            <div class="input-field">
+                <i class="material-icons medium right">priority_high</i>
+                <label>Search by theme</label>
+                {{ form.interests }} 
+            </div>
+
+            <!--Option Dropdown - title-->
+            <div class="input-field">
+                <i class="material-icons medium right">people</i>
+                <select id="proposal_name" name="proposal_name">
+                <option value="---" selected>Select title</option>
+                 
+                {% for pitch in pitches_list | select(attribute='proposal_name') %}
+                <option value="{{pitch.proposal_name}}">{{pitch.proposal_name}}</option>
+                {% endfor %}
+                </select>
+                <label>Search by pitch title</label>
+            </div>
+            <button class="btn btn-medium waves-effect waves-light" type="submit">Search
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+     </div>
+    
+    <div class="col s12 l7 offset-l1 profile-card">
+        <h5 class='search-heading'>{{pitch_count}} pitches are registered with pitchCatch</h5>
+        
+        <!--Table for displaying pitches-->
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th class="thead">Title</th>
+                    <th class="thead">Theme</th>
+                    <th class="thead">Launch Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pitch in pitches_search %}
+                <tr>
+                    <td><a href='/pitch_profile/{{pitch.proposal_name}}'>{{ pitch.proposal_name }}</a></td>
+                    <td>{{ pitch.interests.value }}</td>
+                    <td>{{ pitch.launch_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/pitchers"><button class="btn btn-medium waves-effect waves-light red right" type="submit" name="action">Reset
+            <i class="material-icons right">send</i></button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
