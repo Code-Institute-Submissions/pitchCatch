@@ -90,3 +90,38 @@ def search_catchers():
                             form=form)
 
 
+"""
+Pitches Search Function
+"""
+@app.route('/pitches', methods=['GET', 'POST'])
+def search_pitches():
+    
+    form = PitchForm(request.form)
+    
+    if request.method == 'POST':
+        
+        # change
+        query('interests', request.form['interests'])
+        query('proposal_name', request.form['proposal_name'])
+        
+        # Remove default values from query filter
+        kwargs = {k:v for k,v in query_dict.items() if v != '---'}
+    
+        pitches_all = db_session.query(Pitch).all()
+        pitch_count = db_session.query(Pitch).filter_by(**kwargs).count()
+        pitches_search = db_session.query(Pitch).filter_by(**kwargs).order_by(Pitch.proposal_name)
+        
+        # template for search results
+        return render_template('pitches_search.html', 
+                                form=form, 
+                                pitches_all=pitches_all,
+                                pitches_search=pitches_search, 
+                                pitch_count=pitch_count)
+
+    # template for pitchers
+    pitch_count = db_session.query(Pitch).count()
+    pitches_list = db_session.query(Pitch).filter_by(proposal_name=Pitch.proposal_name).order_by(Pitch.proposal_name)
+    return render_template('pitches.html', 
+                            form=form,
+                            pitches_list=pitches_list,  
+                            pitch_count=str(pitch_count))
