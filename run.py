@@ -16,7 +16,7 @@ from models import *
 init_db()
 
 # app views
-from views import *
+from base_views import *
 from reg_views import *
 from profile_views import *
 from edit_views import *
