@@ -14,8 +14,9 @@
         
         <!--csrf token-->
         {{ form.csrf_token }}
-        <div class="row catcher-bground">
+        <div class="row">
             <!--Form Text Area - Name-->
+            <h5 class="col s12 search-heading">Your details...</h5>
             <div class="input-field col s12 m8 offset-m2 l5">
                 <i class="material-icons medium right">person</i>
                 {{ form.developer_name.label }}
@@ -29,11 +30,11 @@
                 {{ form.region }}
             </div>
 
-            <!--Form Text Area - Description-->
+            <!--Form Text Input - email-->
             <div class="input-field col s12 m8 offset-m2 l5">
-                <i class="material-icons medium right">assignment_ind</i>
-                {{ form.developer_description.label }}
-                {{ form.developer_description(class="materialize-textarea") }}
+                <i class="material-icons medium right">contact_mail</i>
+                {{ form.email.label }}
+                {{ form.email }}
             </div>
 
             <!--Form Select - Interests-->
@@ -42,8 +43,9 @@
                 {{ form.interests.label }}
                 {{ form.interests }}
             </div>
-
-            <!--Form Multiple Select - FrontEnd Interest-->
+            
+            <h5 class="col s12 search-heading">Your profile...</h5>
+            <!--Form Multipl<h1 class=<h1 class=Interest-->
             <div class="input-field col s12 m8 offset-m2 l5">
                 <i class="material-icons medium right">personal_video</i>
                 {{ form.frontend_interest.label }}
@@ -70,26 +72,27 @@
                 {{ form.backend_experience.label }}
                 {{ form.backend_experience }}
             </div>
-
-            <!--Form Text Area - Programming Languages-->
-            <div class="input-field col s12 m8 offset-m2 l5">
-                <i class="material-icons medium right">developer_mode</i>
-                {{ form.prog_languages.label }}
-                {{ form.prog_languages(class="materialize-textarea") }}
-            </div>
            
             <!--Form Text Input - URL-->
-            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+            <div class="input-field col s12 m8 offset-m2 l5">
                 <i class="material-icons medium right">web</i>
                 {{ form.developer_url.label }}
                 {{ form.developer_url }}
             </div>
 
-            <!--Form Text Input - email-->
+            <!--Form Text Area - Programming Languages-->
+            <div class="input-field col s12 m8 offset-m2 l5 offset-l2">
+                <i class="material-icons medium right">developer_mode</i>
+                {{ form.prog_languages.label }}
+                {{ form.prog_languages(class="materialize-textarea") }}
+            </div>
+            
+            <h5 class="col s12 search-heading">About you...</h5>
+            <!--Form Text Area - Description-->
             <div class="input-field col s12 m8 offset-m2 l5">
-                <i class="material-icons medium right">contact_mail</i>
-                {{ form.email.label }}
-                {{ form.email }}
+                <i class="material-icons medium right">assignment_ind</i>
+                {{ form.developer_description.label }}
+                {{ form.developer_description(class="materialize-textarea") }}
             </div>
         
             <!--Submit Form button-->
