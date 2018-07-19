@@ -7,7 +7,37 @@
     <div class="col s12 background-pitchers left-align">
         <h1>pitcher search</h1>
     </div>
-    <div class="col s12 m4 profile-name background-pitchers">
+    
+    <div class="col s12 l7 push-l5 profile-card">
+        <h5 class='search-heading'>{{pitcher_count}} pitchers matched your search</h5>
+        
+        <!--Table to display pitchers-->
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th class="thead">Name</th>
+                    <th class="thead">Interests</th>
+                    <th class="thead">Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pitcher in pitchers_search %}
+                <tr>
+                    <td><a href='/pitcher_profile/{{pitcher.movement_name}}'>{{ pitcher.movement_name }}</a></td>
+                    <td>{{ pitcher.interests.value }}</td>
+                    <td>{{ pitcher.region.value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/pitchers"><button class="btn btn-medium waves-effect waves-light red right" type="submit" name="action">Reset
+            <i class="material-icons right">send</i>
+        </button></a>
+    </div>
+    
+    
+    
+    <div class="col s12 l4 pull-l7 profile-card background-pitchers">
         <h5 class='search-heading'>Browse pitchers...</h5>
         
         <!--Pitcher Search Form-->
@@ -45,30 +75,6 @@
             </button>
         </form>
      </div>
-    <div class="col s12 l7 offset-l1 profile-card">
-        <h5 class='search-heading'>{{pitcher_count}} pitchers matched your search</h5>
-        <table class="highlight">
-            <thead>
-                <tr>
-                    <th class="thead">Name</th>
-                    <th class="thead">Interests</th>
-                    <th class="thead">Region</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for pitcher in pitchers_search %}
-                <tr>
-                    <td><a href='/pitcher_profile/{{pitcher.movement_name}}'>{{ pitcher.movement_name }}</a></td>
-                    <td>{{ pitcher.interests.value }}</td>
-                    <td>{{ pitcher.region.value }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <a href="/pitchers"><button class="btn btn-medium waves-effect waves-light red right" type="submit" name="action">Reset
-            <i class="material-icons right">send</i>
-        </button></a>
-    </div>
 </div>
 
 {% endblock %}

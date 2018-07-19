@@ -6,7 +6,32 @@
     <div class="col s12 background-catchers left-align">
         <h1>catcher search</h1>
     </div>
-    <div class="col s12 l4 profile-name background-catchers">
+    
+    <div class="col s12 l7 push-l5 profile-card">
+        <h5 class='search-heading'>{{catcher_count}} catchers are registered with pitchCatch</h5>
+        
+        <!--Table for displaying catchers-->
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th class="thead">Name</th>
+                    <th class="thead">Interests</th>
+                    <th class="thead">Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for catcher in catchers_list %}
+                <tr>
+                    <td><a href='/catcher_profile/{{catcher.developer_name}}'>{{ catcher.developer_name }}</a></td>
+                    <td>{{ catcher.interests.value }}</td>
+                    <td>{{ catcher.region.value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="col s12 l4 pull-l7 profile-card background-catchers">
         <h5 class='search-heading'>Browse catchers...</h5>
         
         <!--catcher Search Form -->
@@ -30,14 +55,14 @@
             <!--Form Select - FrontEnd Experience-->
             <div class="input-field">
                 <i class="material-icons medium right">desktop_windows</i>
-                <label>Front-end programming experience</label>
+                <label>Front-end experience</label>
                 {{ form.frontend_experience }}
             </div>
 
             <!--Form Select - BackEnd Experience-->
             <div class="input-field">
                 <i class="material-icons medium right">settings_applications</i>
-                <label>Back-end programming experience</label>
+                <label>Back-end experience</label>
                 {{ form.backend_experience }}
             </div>
             
@@ -58,30 +83,7 @@
             </button>
         </form>
      </div>
-    
-    <div class="col s12 l7 offset-l1 profile-card">
-        <h5 class='search-heading'>{{catcher_count}} catchers are registered with pitchCatch</h5>
-        
-        <!--Table for displaying catchers-->
-        <table class="highlight">
-            <thead>
-                <tr>
-                    <th class="thead">Name</th>
-                    <th class="thead">Interests</th>
-                    <th class="thead">Region</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for catcher in catchers_list %}
-                <tr>
-                    <td><a href='/catcher_profile/{{catcher.developer_name}}'>{{ catcher.developer_name }}</a></td>
-                    <td>{{ catcher.interests.value }}</td>
-                    <td>{{ catcher.region.value }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+
 </div>
 
 {% endblock %}

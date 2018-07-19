@@ -6,9 +6,33 @@
     <div class="col s12 background-pitchers left-align">
         <h1>pitcher search</h1>
     </div>
-    <div class="col s12 l4 profile-name background-pitchers">
-        <h5 class='search-heading'>Browse pitchers...</h5>
+    
+    <div class="col s12 l7 push-l5 profile-card">
+        <h5 class='search-heading'>{{pitcher_count}} pitchers are registered with pitchCatch</h5>
         
+        <!--Table for displaying pitchers-->
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th class="thead">Name</th>
+                    <th class="thead">Interests</th>
+                    <th class="thead">Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pitcher in pitchers_list %}
+                <tr>
+                    <td><a href='/pitcher_profile/{{pitcher.movement_name}}'>{{ pitcher.movement_name }}</a></td>
+                    <td>{{ pitcher.interests.value }}</td>
+                    <td>{{ pitcher.region.value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="col s12 l4 pull-l7 profile-card background-pitchers">
+        <h5 class='search-heading'>Browse pitchers...</h5>
         <!--Pitcher Search Form -->
         <form method="POST" class="margin-header" action="/pitchers" enctype="multipart/form-data">
             {{ form.csrf_token }}
@@ -45,29 +69,7 @@
         </form>
      </div>
     
-    <div class="col s12 l7 offset-l1 profile-card">
-        <h5 class='search-heading'>{{pitcher_count}} pitchers are registered with pitchCatch</h5>
-        
-        <!--Table for displaying pitchers-->
-        <table class="highlight">
-            <thead>
-                <tr>
-                    <th class="thead">Name</th>
-                    <th class="thead">Interests</th>
-                    <th class="thead">Region</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for pitcher in pitchers_list %}
-                <tr>
-                    <td><a href='/pitcher_profile/{{pitcher.movement_name}}'>{{ pitcher.movement_name }}</a></td>
-                    <td>{{ pitcher.interests.value }}</td>
-                    <td>{{ pitcher.region.value }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+
 </div>
 
 {% endblock %}
