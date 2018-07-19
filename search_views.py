@@ -26,7 +26,9 @@ def search_pitchers():
     form = PitcherForm(request.form)
     
     if request.method == 'POST':
-        
+
+        # clear dict for new search
+        query_dict.clear()
         query('interests', request.form['interests'])
         query('region', request.form['region'])
         query('movement_name', request.form['movement_name'])
@@ -37,7 +39,7 @@ def search_pitchers():
         pitchers_all = db_session.query(Pitcher).all()
         pitcher_count = db_session.query(Pitcher).filter_by(**kwargs).count()
         pitchers_search = db_session.query(Pitcher).filter_by(**kwargs).order_by(Pitcher.movement_name)
-        
+
         # template for search results
         return render_template('pitchers_search.html', 
                                 form=form, 
@@ -63,7 +65,9 @@ def search_catchers():
     form = CatcherForm(request.form)
     
     if request.method == 'POST':
-
+        
+        # clear dict for new search
+        query_dict.clear()
         query('region', request.form['region'])
         query('interests', request.form['interests'])
         query('frontend_experience', request.form['frontend_experience'])
@@ -76,6 +80,7 @@ def search_catchers():
         catcher_count = db_session.query(Catcher).filter_by(**kwargs).count()
         catchers_search = db_session.query(Catcher).filter_by(**kwargs).order_by(Catcher.developer_name)      
         
+        # template for search results
         return render_template('catchers_search.html', 
                         form=form, 
                         catchers_all=catchers_all,
@@ -100,7 +105,8 @@ def search_pitches():
     
     if request.method == 'POST':
         
-        # change
+        # clear dict for new search
+        query_dict.clear()
         query('interests', request.form['interests'])
         query('proposal_name', request.form['proposal_name'])
         
@@ -118,7 +124,7 @@ def search_pitches():
                                 pitches_search=pitches_search, 
                                 pitch_count=pitch_count)
 
-    # template for pitchers
+    # template for pitches
     pitch_count = db_session.query(Pitch).count()
     pitches_list = db_session.query(Pitch).filter_by(proposal_name=Pitch.proposal_name).order_by(Pitch.proposal_name)
     return render_template('pitches.html', 
