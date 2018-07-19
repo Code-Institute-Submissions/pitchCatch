@@ -33,7 +33,7 @@ def search_pitchers():
         
         # Remove default values from query filter
         kwargs = {k:v for k,v in query_dict.items() if v != '---'}
-    
+        
         pitchers_all = db_session.query(Pitcher).all()
         pitcher_count = db_session.query(Pitcher).filter_by(**kwargs).count()
         pitchers_search = db_session.query(Pitcher).filter_by(**kwargs).order_by(Pitcher.movement_name)
