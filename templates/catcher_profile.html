@@ -11,16 +11,14 @@
 
 
     {% for catcher in catcher_profile %}
-    <div class="col s12 m4 left-align profile-name">
+    <div class="col s12 m5 left-align profile-name">
         <blockquote class="blocktheme-catcher">
             <h1>{{catcher.developer_name}}</h1>
         </blockquote>
     </div>
 
-
-    <!--testing materilize card-->
-
-    <div class="col s12 m8 profile-card">
+    <!--Materilize card to display profile information-->
+    <div class="col s12 m7 profile-card">
         <div class="card sticky-action">
             <div>
                 <div class="brand-logo center-align"><img src="/static/images/catcher.png">Summary</div>
@@ -70,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div class="col s8 offset-s4">
+    <div class="col s7 offset-s5">
         <a href='/delete_catcher/{{catcher.developer_name}}'>
             <i class="material-icons medium left delete">delete_forever</i>
         </a>        
