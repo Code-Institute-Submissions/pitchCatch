@@ -21,6 +21,7 @@ def edit_pitcher(movement_name):
         db_session.commit()
         # update value for movement_name variable to pass to template
         movement_name=pitcher_edit.movement_name
+        flash("Changes saved.")
         return redirect(url_for('pitcher_profile', movement_name=movement_name))
 
     return render_template('edit_pitcher.html', movement_name=movement_name, form=form)
@@ -40,6 +41,7 @@ def edit_catcher(developer_name):
         db_session.commit()
         # update value for developer_name variable to pass to template
         developer_name=catcher_edit.developer_name
+        flash("Changes saved.")
         return redirect(url_for('catcher_profile', developer_name=developer_name))
 
     return render_template('edit_catcher.html', developer_name=developer_name, form=form)
@@ -59,6 +61,7 @@ def edit_pitch(proposal_name):
         db_session.commit()
         # update value for movement_name variable to pass to template
         proposal_name=pitch_edit.proposal_name
+        flash("Changes saved.")
         return redirect(url_for('pitch_profile', proposal_name=proposal_name))
 
     return render_template('edit_pitch.html', proposal_name=proposal_name, form=form)
