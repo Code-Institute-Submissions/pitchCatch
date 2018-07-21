@@ -6,7 +6,10 @@
 
 
     <div class="col s12 background-catchers left-align">
-        <h5>catcher Profile <a class="tooltipped" data-position="top" data-tooltip="Click in the bottom half of the profile card to reveal further information about this catcher"><i class="material-icons medium">help_outline</i></a></h5>
+        
+        <!--Tooltip page guide-->
+        <h5>catcher Profile <a class="tooltipped" data-position="top" data-tooltip="Click in the bottom half of the profile card to reveal further information about this catcher">
+            <i class="material-icons medium">help_outline</i></a></h5>
     </div>
 
 
@@ -42,7 +45,7 @@
 
                     <!--Need an if statement here for blank returns-->
 
-                    <li>{{ pitches_caught.proposal_name }}</li>
+                    <li><a href='/pitch_profile/{{pitches_caught.proposal_name}}'>{{ pitches_caught.proposal_name }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
