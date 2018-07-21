@@ -194,6 +194,7 @@ input {
 
 .modal-btns {
   color: white;
+  text-shadow: 3px 2px 4px black;
   font-family: jua;
   font-size: 1rem; }
   @media (min-width: 768px) {
