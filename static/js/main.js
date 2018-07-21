@@ -5,5 +5,8 @@ $(document).ready(function() {
 	$('select').material_select();
 	$('.modal').modal();
 	$('.tooltipped').tooltip();
+	setTimeout(function() {
+        $('#message').fadeOut('slow');
+    }, 5000);
 
 });
