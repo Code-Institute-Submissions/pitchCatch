@@ -65,7 +65,7 @@ td a {
 }
 
 .margin-top-section {
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .top-margin {
@@ -90,6 +90,17 @@ hr {
     width: 33%;
 }
 
-// img {
-//     display: inline;
-// }
+/*Messages*/
+#message {
+    position: fixed;
+    top: 5rem;
+    color: #f72727;
+    background: rgba(251, 233, 220, 0.95);
+    padding: 3rem;
+    width: 85%;
+    font-family: jua;
+    z-index: 1000;
+    font-size: 2rem;
+    border: solid;
+    box-shadow: 4px 5px 8px black;
+}

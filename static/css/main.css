@@ -15,7 +15,7 @@ nav {
       margin-top: 5rem; } }
   @media (min-width: 992px) {
     .margin-top {
-      margin-top: 0rem; } }
+      margin-top: 2rem; } }
 
 .pitch-card {
   margin-top: 0 !important; }
@@ -75,7 +75,7 @@ td a {
 
 /*Background themes*/
 .background-pitchers {
-  background-color: #375610;
+  background-color: #66a21a;
   opacity: 0.7;
   box-shadow: 3px 4px 7px black; }
 
@@ -90,11 +90,11 @@ td a {
   box-shadow: 3px 4px 7px black; }
 
 .border-pitchers {
-  border-right: 2px solid #375610; }
+  border-right: 2px solid #66a21a; }
 
 .blocktheme-pitcher {
   border-left: .5rem solid;
-  color: #375610; }
+  color: #66a21a; }
 
 .blocktheme-catcher {
   border-left: .5rem solid;
@@ -115,7 +115,7 @@ td a {
       margin-top: 5rem; } }
 
 .margin-top-section {
-  margin-top: 5rem; }
+  margin-top: 3rem; }
 
 .top-margin {
   margin-top: 2rem; }
@@ -133,6 +133,20 @@ hr {
 /*Banners*/
 .banner {
   width: 33%; }
+
+/*Messages*/
+#message {
+  position: fixed;
+  top: 5rem;
+  color: #f72727;
+  background: rgba(251, 233, 220, 0.95);
+  padding: 3rem;
+  width: 85%;
+  font-family: jua;
+  z-index: 1000;
+  font-size: 2rem;
+  border: solid;
+  box-shadow: 4px 5px 8px black; }
 
 form .material-icons {
   color: #fff !important;
