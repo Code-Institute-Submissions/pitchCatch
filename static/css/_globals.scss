@@ -57,6 +57,13 @@ td a {
     margin-top: 10rem;
 }
 
+.margin-top-index {
+    margin-top: 8rem;
+    @media (min-width: 768px) {
+        margin-top: 5rem;
+    }
+}
+
 .margin-top-section {
     margin-top: 5rem;
 }

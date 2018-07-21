@@ -1,3 +1,11 @@
 @mixin blockqline {
     border-left: .5rem solid;
 }
+
+@mixin modal-logo {
+    display: inline;
+    border-radius: 6px;
+    position: absolute;
+    left: 1rem;
+    bottom: .25rem;
+}

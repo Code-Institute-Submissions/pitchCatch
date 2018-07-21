@@ -1,0 +1,41 @@
+.catcher-logo {
+    @include modal-logo;
+    width: 37px;
+}
+
+.pitch-logo {
+    @include modal-logo;
+    width: 68px;
+}
+
+.pitcher-logo {
+    @include modal-logo;
+    width: 68px;
+}
+
+.modal-btns {
+    color: white;
+    font: {
+        family: jua;
+        size: 1rem;
+        }
+    @media (min-width: 768px) {
+        font-size: 2rem;    
+    }
+}
+
+
+
+
+@media (min-width: 768px) {
+    .btn-floating.btn-large i {
+        line-height: 112px;
+    }
+    .btn-large i {
+        font-size: 3.2rem;
+    }
+    .btn-floating.btn-large {
+        width: 112px;
+        height: 112px;
+    }
+}

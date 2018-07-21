@@ -10,6 +10,12 @@ nav {
 
 .margin-top {
   margin-top: 2rem; }
+  @media (min-width: 768px) {
+    .margin-top {
+      margin-top: 5rem; } }
+  @media (min-width: 992px) {
+    .margin-top {
+      margin-top: 0rem; } }
 
 .pitch-card {
   margin-top: 0 !important; }
@@ -43,11 +49,18 @@ i.medium {
   background: rgba(0, 0, 0, 0.87);
   padding: 10px; }
 
-.collapsible-body {
-  background: #fff; }
+.valign-wrapper {
+  margin-top: 17%;
+  border-bottom: 1px white solid;
+  border-top: 1px solid white; }
 
-.collapsible-header {
-  line-height: 0; }
+.tagline {
+  opacity: .7;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (min-width: 768px) {
+    .tagline {
+      font-size: 4rem; } }
 
 /* table font color*/
 td, th {
@@ -95,6 +108,12 @@ td a {
 .margin-top-main {
   margin-top: 10rem; }
 
+.margin-top-index {
+  margin-top: 8rem; }
+  @media (min-width: 768px) {
+    .margin-top-index {
+      margin-top: 5rem; } }
+
 .margin-top-section {
   margin-top: 5rem; }
 
@@ -139,7 +158,7 @@ input {
 .card .card-action {
   background-color: #a08111; }
 
-img {
+.form-logo {
   display: inline;
   border-radius: 6px;
   width: 50px;
@@ -149,6 +168,48 @@ img {
   opacity: 0.85;
   box-shadow: 2px 2px 5px 1px #a08111; }
 
+.catcher-logo {
+  display: inline;
+  border-radius: 6px;
+  position: absolute;
+  left: 1rem;
+  bottom: .25rem;
+  width: 37px; }
+
+.pitch-logo {
+  display: inline;
+  border-radius: 6px;
+  position: absolute;
+  left: 1rem;
+  bottom: .25rem;
+  width: 68px; }
+
+.pitcher-logo {
+  display: inline;
+  border-radius: 6px;
+  position: absolute;
+  left: 1rem;
+  bottom: .25rem;
+  width: 68px; }
+
+.modal-btns {
+  color: white;
+  font-family: jua;
+  font-size: 1rem; }
+  @media (min-width: 768px) {
+    .modal-btns {
+      font-size: 2rem; } }
+
+@media (min-width: 768px) {
+  .btn-floating.btn-large i {
+    line-height: 112px; }
+
+  .btn-large i {
+    font-size: 3.2rem; }
+
+  .btn-floating.btn-large {
+    width: 112px;
+    height: 112px; } }
 body {
   background-size: cover;
   background-repeat: no-repeat;
