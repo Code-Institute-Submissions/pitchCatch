@@ -4,6 +4,7 @@ from models import Pitcher, Pitch, Catcher, caught
 from forms import PitchForm, PitcherForm, CatcherForm
 from database import db_session
 
+
 """
 Catch Pitch
 """
@@ -14,8 +15,19 @@ def catch_pitch(proposal_name):
     
     # Need exception to catch duplicates
 
+
     if catcher not in pitch.pitch_catch:
         pitch.pitch_catch.append(catcher)
         db_session.commit()
+        flash("Pitch caught!")
         
-        return redirect(url_for('pitch_profile', proposal_name=proposal_name))
+    else:
+        db_session.rollback()
+        flash("You've already caught this pitch!")
+        
+    return redirect(url_for('pitch_profile', proposal_name=proposal_name))
+
+            
+        
+
+        
