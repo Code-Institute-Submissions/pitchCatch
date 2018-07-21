@@ -62,6 +62,9 @@ i.medium {
     .tagline {
       font-size: 4rem; } }
 
+h5 a {
+  color: white; }
+
 /* table font color*/
 td, th {
   color: #c13f3f;
