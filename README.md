@@ -15,28 +15,31 @@ Users sign-up to pitchCatch under two categories:
 * **Pitchers** are social movements or campaigns
 * **Catchers** are software developers
 
-Once a **pitcher** has registered their profile details, they are able to make a **Pitch**. **Pitches** are ideas for software projects that have been proposed by **pitchers**.
+Once a **Pitcher** has registered their profile details, they are able to make a **Pitch**. 
 
-All **Pitches** on the pitchCatch platform are searchable, and if a software developer, or **catcher**, is interested in participating in a particular project, they can choose to **catch** the **pitch**.   
+**Pitches** are ideas for software projects that have been proposed by **pitchers**.
 
-**Catchers** and **pitchers** have profile pages outlining their interests, skills, etc and these can also be searched to find potential partners and contacted using the contact information provided. 
+All **Pitches** on the pitchCatch platform are searchable, and if a software developer, or **Catcher**, is interested in participating in a particular project, they can choose to **Catch** the **Pitch**.   
+
+**Catchers** and **Pitchers** have profile pages outlining their interests, skills, etc and these can also be searched to find potential partners, contactable through the email information provided. 
 
 
 ### How does it work
  
 pitchCatch is built using the python-based **Flask** micro-framework and is written in **python 3.4.3**. 
 
-**SQLAlchemy** is used to map the application's classes to a **PSQL** database. User data is handled using **WTForms-Alchemy**
+**SQLAlchemy** is used to map the application's Python classes to a **PSQL** database. User data is handled using **WTForms-Alchemy**
 
 The site is styled using the **Materialize CSS** front-end framework and **JQuery** code for enhancing user-experience. 
 
 The database and the entire application is hosted on the **Heroku** platform **nb. to be deployed** 
 
-The site is designed using a **mobile-first** design and can be viewed [HERE](insert link following deployment). 
+The site is designed using a **mobile-first** approach and can be viewed [HERE](insert link following deployment). 
 
 
 ## Features
 Find below the features provided in the pitchCatch application. 
+
 ### Existing Features
 
 > please note that pitchCatch does not yet include authentication
@@ -47,17 +50,17 @@ Find below the features provided in the pitchCatch application.
 * **Pitchers** can register **Pitches** by providing details of their proposal
 
 #### Profile
-* the details inputed during registration for each **pitcher**, **catcher** and **pitch** are presented on individual profile pages 
-* existing profiles can be **edited** or **deleted**
+* the details inputed during registration for each **Pitcher**, **Catcher** and **Pitch** are presented on individual profile pages 
+* all existing profiles can be **edited** or **deleted**
 
 #### Pitches and Catches
-* the titles of all the **pitches** which have been made by a campaign or social movement are listed on their pitcher profile page 
-* a **catcher** expresses an interest in a particular project (**pitch**) by **catching** it. This feature is available on the pitch profile page. The titles of the projects which the developer is interested in are listed on the catcher profile page
-* the list of developers who are interested in a particular project are, in turn, listed on the pitch profile pages
-* projects, or **pitches**, remain on pitchCatch regardless of whether a **Pitcher** is deleted and leaves the pitchCatch network. This persistence recognises that **ownership** is distributed among all of the participants in the project, not simply the campaign or social movement who had the origninal idea
+* the titles of every **Pitch** made by a campaign or social movement are listed on their Pitcher profile page 
+* a **Catcher** expresses an interest in a particular project (**Pitch**) by **Catching** it. This feature is available on each Pitch profile page. The titles of the projects which the developer is interested in are listed on the Catcher profile page
+* the list of developers who are interested in a particular project are, in turn, listed on the Pitch profile pages
+* projects, or **Pitches**, remain on pitchCatch regardless of whether a **Pitcher** is deleted and leaves the pitchCatch network. This persistence recognises that **ownership** is distributed among all of the participants in the project, not simply the campaign or social movement who had the origninal seed idea
 
 #### Search
-* all of the pitchers, catchers and pitches on the pitchCatch platform can be searched by using filters. Records matching the user's search criteria are diplsayed in a table  
+All of the **Pitchers**, **Catchers** and **Pitches** on the pitchCatch platform can be searched by using filters. Records matching the user's search criteria are diplsayed in a table  
 
 
 ### Features Left to Implement
@@ -66,15 +69,15 @@ Find below the features provided in the pitchCatch application.
 
 
 ## Database Schema
-Share details of how you created your database schema in your README. Consider sharing working drafts or finalised versions of your database schema in a 'Database Schema' folder in your repo. Provide a link to this folder in your README.
+The pitchCatch database schema was developed by progessing through the following steps:
+- defining the Entity-Relationship Model (ERM) and the cardinality of relationships to articulate the basic relations and constraints between the python classes as represented in a database
+- from the relationships defined in the ERM, deciding to use a relational database (PSQL) to store the data
+- developing user stories to draw out why and how users would interact with the data in the application
+- establishing the entity attributes that are required to meet the expectations outlined in the user stories 
+- using the ERM to determine the Create, Read, Update, Delete (CRUD) functions relative to each entity
+- developing the python classes based on above
 
-
-- User Stories
-- - Entity-Relationship Model
-- Cardinality of Relationships 1-1, etc
-- CRUD Operations mapped
-- Database Scheme FK & helper table (final)
-
+Examples of outputs from each of the above steps are provided in the Database Schema sub-directory [NEED A LINK]
 
 ## Tech Used
 
@@ -82,11 +85,11 @@ Share details of how you created your database schema in your README. Consider s
 
 ### Code
 - **HTML**, **CSS**, **JQuery** and **Python**
-  - Base languages used to create website
+  - Base languages used to create application
 - [Flask 1.0](http://flask.pocoo.org/docs/1.0/)
-    - **Flask** is used as a basic python framework to create the application
+    - **Flask** is used as micro-framework to create the application
 - [SQLA-Alchemy 1.2.9](https://www.sqlalchemy.org/)
-    - **SQLA-Alchemy** is an extension applied to Flask to provide an Object Relational Mapper to create models which map the application's classes to the postgreSQL database 
+    - **SQLA-Alchemy** is an extension applied to Flask providing an Object Relational Mapper to create models which map the application's classes to the postgreSQL database 
 - [WTForms-Alchemy 0.16.7](https://www.djangoproject.com/)
     - **WTForms-Alchemy** generates forms from the SQLAlchemy models
 - [Materialize 1.0.0-rc.2](https://materializecss.com/)
@@ -94,7 +97,7 @@ Share details of how you created your database schema in your README. Consider s
 - [JQuery 3.3.1](https://jquery.com)
     - **JQuery** adds animation styling to the site to enhance user experience.
 - [Sass](https://sass-lang.com/)
-    - **Sass/scss** CSS extension is used to code and organise CSS stylesheets
+    - **Sass/scss** CSS extension is used to code and organise stylesheets
 
 ### Hosting
 - [Heroku-Postres](https://www.heroku.com/postgres)
@@ -112,7 +115,7 @@ Share details of how you created your database schema in your README. Consider s
 3. python manage.py make migrations etc.
 4. pip install requirements
 5. The project will now run on [localhost](http://127.0.0.1:8080)
-6. We welcome all contributions to improving our code, so make changes you think are needed/desired and submit a pull request
+6. We welcome all contributions to improving our code and encourage pull requests. Please see **Features To Be Implemented** for particular features we are eager to progress.
 
 ## Credits
 
@@ -120,7 +123,7 @@ Share details of how you created your database schema in your README. Consider s
 - Background image to the site was produced by Nathalie Caleyron [Nathalie Caleyron](https://www.instagram.com/nathaliecaleyron/)
 
 ### Profile Details
-- the profile details provided for 'pitchers' have been copied from the particular social movement or campaign's website 
+- the profile details provided for **Pitchers** have been copied from the particular social movement or campaign's website 
 - all of the profile details provided to register pitches and catchers are fictitious
 
 
