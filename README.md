@@ -1,4 +1,4 @@
-![alt text](Database-Schema/FullSizeRender.jpg)
+![alt text](Database-Schema/FullSizeRender.jpg = 449x318)
 
 # pitchCatch
 A platform matching social movements with software developers to create innovative and effective applications.
