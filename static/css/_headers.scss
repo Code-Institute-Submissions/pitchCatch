@@ -9,6 +9,13 @@
     border-top: 1px solid white;
 }
 
+.reg-header {
+    @media (min-width: 992px) {
+        font-size: 3rem !important;
+        line-height: 0 !important;
+    }
+}
+
 .tagline {
     opacity: .7;
     margin: {

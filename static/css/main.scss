@@ -10,35 +10,3 @@
 @import "modals.scss";
 
 
-// ///////////////////////////////////////////////////body
-body {
-    background: {
-        size: cover;
-        repeat: no-repeat;
-        image: url('/static/images/back-image.jpg');
-        attachment: fixed;
-        position: center;
-    }
-}
-
-
-
-
-
-form .material-icons {
-    color: $white !important;
-    text-shadow: $text-shadow;
-}
-
-
-
-////////////////////////////////////////////////////// fonts
-
-.reg-header {
-    @media (min-width: 992px) {
-        font-size: 3rem !important;
-        line-height: 0 !important;
-    }
-}
-
-

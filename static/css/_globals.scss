@@ -1,3 +1,14 @@
+/*background image*/
+body {
+    background: {
+        size: cover;
+        repeat: no-repeat;
+        image: url('/static/images/back-image.jpg');
+        attachment: fixed;
+        position: center;
+    }
+}
+
 /* table font color*/
 
 td, th {
@@ -92,12 +103,14 @@ hr {
 
 /*Messages*/
 #message {
+
     position: fixed;
     top: 5rem;
+    left: 10%;
     color: #f72727;
     background: rgba(251, 233, 220, 0.95);
     padding: 3rem;
-    width: 85%;
+    width: 80%;
     font-family: jua;
     z-index: 1000;
     font-size: 2rem;
