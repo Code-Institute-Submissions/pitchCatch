@@ -1,55 +1,247 @@
-/*
-Error: File to import not found or unreadable: footer.scss.
-        on line 9 of main.scss
+/*Shadows*/
+/*Padding (small view)*/
+nav {
+  background-color: #000; }
 
-4: @import "fonts.scss";
-5: @import "headers.scss";
-6: @import "globals.scss";
-7: @import "forms.scss";
-8: @import "card.scss";
-9: @import "footer.scss";
-10: @import "modals.scss";
+.sub-heading {
+  position: fixed;
+  top: 5rem;
+  left: 5rem;
+  font-size: 2rem; }
 
-Backtrace:
-main.scss:9
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:45:in `import'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:28:in `imported_file'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:37:in `css_import?'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:331:in `block in watch'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: footer.scss.\A         on line 9 of main.scss\A \A 4: @import \"fonts.scss\";\A 5: @import \"headers.scss\";\A 6: @import \"globals.scss\";\A 7: @import \"forms.scss\";\A 8: @import \"card.scss\";\A 9: @import \"footer.scss\";\A 10: @import \"modals.scss\";"; }
+.margin-top {
+  margin-top: 2rem; }
+  @media (min-width: 768px) {
+    .margin-top {
+      margin-top: 5rem; } }
+  @media (min-width: 992px) {
+    .margin-top {
+      margin-top: 2rem; } }
+
+.pitch-card {
+  margin-top: 0 !important; }
+
+h1,
+h2,
+h3,
+h5 {
+  color: #fff; }
+
+h1 {
+  font-size: 2rem; }
+
+nav ul a {
+  font-size: 1rem; }
+
+nav .brand-logo {
+  font-family: 'Jua', 'sans-serif'; }
+
+i.medium {
+  font-size: 2rem; }
+
+/*Form fonts*/
+.select-wrapper {
+  color: #fff; }
+
+.delete {
+  color: #ff4040; }
+
+.search-heading {
+  background: rgba(0, 0, 0, 0.87);
+  padding: 10px; }
+
+.valign-wrapper {
+  margin-top: 17%;
+  border-bottom: 1px white solid;
+  border-top: 1px solid white; }
+
+@media (min-width: 992px) {
+  .reg-header {
+    font-size: 3rem !important;
+    line-height: 0 !important; } }
+
+.tagline {
+  opacity: .7;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (min-width: 768px) {
+    .tagline {
+      font-size: 4rem; } }
+
+h5 a {
+  color: white; }
+
+/*background image*/
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/static/images/back-image.jpg");
+  background-attachment: fixed;
+  background-position: center; }
+
+/* table font color*/
+td, th {
+  color: #c13f3f;
+  font-weight: 600; }
+
+td a {
+  color: #0690f5; }
+
+.thead {
+  color: #fff; }
+
+/*Background themes*/
+.background-pitchers {
+  background-color: #66a21a;
+  opacity: 0.7;
+  box-shadow: 3px 4px 7px black; }
+
+.background-catchers {
+  background-color: #281b96;
+  opacity: 0.7;
+  box-shadow: 3px 4px 7px black; }
+
+.background-pitches {
+  background-color: rgba(216, 50, 50, 0.85);
+  opacity: 0.7;
+  box-shadow: 3px 4px 7px black; }
+
+.border-pitchers {
+  border-right: 2px solid #66a21a; }
+
+.blocktheme-pitcher {
+  border-left: .5rem solid;
+  color: #66a21a; }
+
+.blocktheme-catcher {
+  border-left: .5rem solid;
+  color: #5d4ce8; }
+
+.blocktheme-pitch {
+  border-left: .5rem solid;
+  color: rgba(216, 50, 50, 0.85); }
+
+/*Margins*/
+.margin-top-main {
+  margin-top: 10rem; }
+
+.margin-top-index {
+  margin-top: 8rem; }
+  @media (min-width: 768px) {
+    .margin-top-index {
+      margin-top: 5rem; } }
+
+.margin-top-section {
+  margin-top: 3rem; }
+
+.top-margin {
+  margin-top: 2rem; }
+
+.profile-name {
+  margin-top: 20%; }
+
+.profile-card {
+  margin-top: 10%; }
+
+hr {
+  width: 33.3%;
+  margin-bottom: 2rem; }
+
+/*Banners*/
+.banner {
+  width: 33%; }
+
+/*Messages*/
+#message {
+  position: fixed;
+  top: 5rem;
+  left: 10%;
+  color: #f72727;
+  background: rgba(251, 233, 220, 0.95);
+  padding: 3rem;
+  width: 80%;
+  font-family: jua;
+  z-index: 1000;
+  font-size: 2rem;
+  border: solid;
+  box-shadow: 4px 5px 8px black; }
+
+form .material-icons {
+  color: #fff !important;
+  text-shadow: 3px 2px 4px black; }
+
+i.medium {
+  font-size: 2rem; }
+
+div label {
+  color: rgba(255, 227, 157, 0.85) !important;
+  font-weight: 600; }
+
+textarea.materialize-textarea {
+  padding: 0;
+  color: #fff; }
+
+input {
+  color: white; }
+
+.card {
+  background: rgba(255, 227, 157, 0.85); }
+
+.card .card-action {
+  background-color: #a08111; }
+
+.form-logo {
+  display: inline;
+  border-radius: 6px;
+  width: 50px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  opacity: 0.85;
+  box-shadow: 2px 2px 5px 1px #a08111; }
+
+.catcher-logo {
+  display: inline;
+  border-radius: 6px;
+  position: absolute;
+  left: 1rem;
+  bottom: .25rem;
+  width: 37px; }
+
+.pitch-logo {
+  display: inline;
+  border-radius: 6px;
+  position: absolute;
+  left: 1rem;
+  bottom: .25rem;
+  width: 68px; }
+
+.pitcher-logo {
+  display: inline;
+  border-radius: 6px;
+  position: absolute;
+  left: 1rem;
+  bottom: .25rem;
+  width: 68px; }
+
+.modal-btns {
+  color: white;
+  text-shadow: 3px 2px 4px black;
+  font-family: jua;
+  font-size: 1rem; }
+  @media (min-width: 768px) {
+    .modal-btns {
+      font-size: 2rem; } }
+
+@media (min-width: 768px) {
+  .btn-floating.btn-large i {
+    line-height: 112px; }
+
+  .btn-large i {
+    font-size: 3.2rem; }
+
+  .btn-floating.btn-large {
+    width: 112px;
+    height: 112px; } }
+
+/*# sourceMappingURL=main.css.map */
