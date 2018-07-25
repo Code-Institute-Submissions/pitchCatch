@@ -12,6 +12,9 @@ def catch_pitch(proposal_name):
     pitch = db_session.query(Pitch).filter_by(proposal_name=request.form['pitch']).first()
     catcher = db_session.query(Catcher).filter_by(developer_name=request.form['catcher']).first()
     
+    # need to catch empty pitch
+
+        
     if catcher not in pitch.pitch_catch:
         pitch.pitch_catch.append(catcher)
         db_session.commit()
