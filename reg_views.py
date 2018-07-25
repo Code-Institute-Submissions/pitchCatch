@@ -28,7 +28,8 @@ def reg_pitcher():
                 )
             db_session.add(pitcher)
             db_session.commit()
-        
+
+        # catch duplicate entries
         except IntegrityError:
             db_session.rollback()
             
@@ -67,7 +68,8 @@ def reg_catcher():
                 )
             db_session.add(catcher)
             db_session.commit()
-    
+
+        # catch duplicate entries
         except IntegrityError:
             db_session.rollback()
                 
@@ -103,6 +105,7 @@ def reg_pitch():
             db_session.add(pitch)
             db_session.commit()
             
+        # catch duplicate entries
         except IntegrityError:
             db_session.rollback()
                 

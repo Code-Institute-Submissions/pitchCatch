@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for, flash
 from run import app
-from models import Pitcher, Pitch, Catcher, caught
+from models import Pitcher, Pitch, Catcher
 from forms import PitchForm, PitcherForm, CatcherForm
 from database import db_session
 

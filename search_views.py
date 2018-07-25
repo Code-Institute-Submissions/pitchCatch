@@ -14,7 +14,7 @@ query_dict = {}
 """Create Search Dictionary Items"""
 def query(k,v):
     query_dict[k]=v
-    print(query_dict)
+    # print(query_dict)
 
 
 """
@@ -29,18 +29,20 @@ def search_pitchers():
 
         # clear dict for new search
         query_dict.clear()
+        
+        # input search crtieria
         query('interests', request.form['interests'])
         query('region', request.form['region'])
         query('movement_name', request.form['movement_name'])
         
-        # Remove default values from query filter
+        # remove default values from query filter
         kwargs = {k:v for k,v in query_dict.items() if v != '---'}
         
         pitchers_all = db_session.query(Pitcher).all()
         pitcher_count = db_session.query(Pitcher).filter_by(**kwargs).count()
         pitchers_search = db_session.query(Pitcher).filter_by(**kwargs).order_by(Pitcher.movement_name)
 
-        # template for search results
+        # render template for search results
         return render_template('pitchers_search.html', 
                                 form=form, 
                                 pitchers_all=pitchers_all,
@@ -68,6 +70,8 @@ def search_catchers():
         
         # clear dict for new search
         query_dict.clear()
+        
+        # input search crtieria        
         query('region', request.form['region'])
         query('interests', request.form['interests'])
         query('frontend_experience', request.form['frontend_experience'])
@@ -107,6 +111,8 @@ def search_pitches():
         
         # clear dict for new search
         query_dict.clear()
+
+        # input search crtieria
         query('interests', request.form['interests'])
         query('proposal_name', request.form['proposal_name'])
         

@@ -1,6 +1,5 @@
 # models
 import sqlalchemy as sa
-from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Date, DateTime, Integer, String, Text, ForeignKey
 from sqlalchemy_utils import URLType, EmailType, ChoiceType

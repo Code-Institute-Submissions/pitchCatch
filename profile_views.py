@@ -1,7 +1,6 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, url_for, flash
 from run import app
 from models import Pitcher, Pitch, Catcher, caught
-from forms import PitchForm, PitcherForm, CatcherForm
 from database import db_session
 
 
@@ -28,13 +27,11 @@ def catcher_profile(developer_name):
 """
 Pitch Profile
 """
-# Pitch Profile
 @app.route('/pitch_profile/<proposal_name>', methods=['GET', 'POST'])
 def pitch_profile(proposal_name):
     pitches_list = db_session.query(Pitch).filter_by(proposal_name=proposal_name).first()
     catcher_select = db_session.query(Catcher).all()
     
     return render_template('pitch_profile.html', 
-                            # caught_list=caught_list,
                             catcher_select=catcher_select,
                             pitches_list=pitches_list)

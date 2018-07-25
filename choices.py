@@ -1,3 +1,4 @@
+# Applies to Catchers and Pitchers
 INTERESTS = [
     ('---', '---'),
     ('promoting social and economic equality', 'promoting social and economic equality'),
@@ -8,6 +9,7 @@ INTERESTS = [
     ('creating and sustaining alternative platforms/institutions', 'creating and sustaining alternative platforms/institutions'),
 ]
 
+# Applies to Catchers and Pitchers
 REGIONS = [
     ('---', '---'),
     ('Asia', 'Asia'),
@@ -18,6 +20,7 @@ REGIONS = [
     ('Australia', 'Australia'),
 ] 
 
+# Applies to Catchers
 EXPERIENCE = [
     ('---', '---'),
     ('Beginner', 'Beginner'),
@@ -25,6 +28,7 @@ EXPERIENCE = [
     ('Experienced', 'Experienced')
 ]
 
+# Applies to Catchers
 YN = [
     ('---', '---'),
     ('Yes', 'Yes'),

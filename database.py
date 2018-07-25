@@ -1,8 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from config import DATABASE_URI
 
-engine = create_engine('postgresql://ubuntu:pw123@localhost:5432/pitch_catch_caught', convert_unicode=True)
+engine = DATABASE_URI
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))

@@ -1,9 +1,6 @@
 import os
 from flask import Flask
-
-# not sure if using SQLAlchemy due to sessionmaker (read up on this)
 from flask_sqlalchemy import SQLAlchemy
-
 from database import init_db
 
 

@@ -1,7 +1,6 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import request, redirect, url_for, flash
 from run import app
-from models import Pitcher, Pitch, Catcher, caught
-from forms import PitchForm, PitcherForm, CatcherForm
+from models import Pitcher, Pitch, Catcher
 from database import db_session
 
 """DELETE VIEWS"""
