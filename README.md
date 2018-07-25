@@ -114,10 +114,12 @@ Examples of outputs from each of the above steps are provided in the Database Sc
 
 1. Create a virtual environment running python 3.4.3 as the default in your IDE
 2. Clone this repository by running the ```git clone https://github.com/Deasun/pitchCatch.git``` command
-3. python manage.py make migrations etc.
-4. pip install requirements
-5. The project will now run on [localhost](http://127.0.0.1:8080)
-6. We welcome all contributions to improving our code and encourage pull requests. Please see **Features To Be Implemented** for particular features we are eager to progress.
+3. pip install requirements
+4. Set up a psql database and connect the application to it
+5. Paste your psql database details in the run.py file:
+> `engine = create_engine('postgresql://<username>:<password>@localhost:5432/<database name>', convert_unicode=True)`
+6. The project will now run on [localhost](http://127.0.0.1:8080)
+7. We welcome all contributions to improving our code and encourage pull requests. Please see **Features To Be Implemented** for particular features we are eager to progress.
 
 ## Credits
 
