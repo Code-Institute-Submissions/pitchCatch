@@ -1,4 +1,4 @@
-![alt text](Database-Schema/FullSizeRender.jpg)
+![alt text](Database-Schema/FullSizeRender.jpggit )
 
 # pitchCatch
 A platform matching social movements with software developers to create innovative and effective applications.
