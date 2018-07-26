@@ -34,7 +34,7 @@ pitchCatch is built using the python-based **Flask** micro-framework and is writ
 
 The site is styled using the **Materialize CSS** front-end framework and **JQuery** code for enhancing user-experience. 
 
-The database and the entire application is hosted on the **Heroku** platform **nb. to be deployed** 
+The database and the entire application is hosted on the **Heroku** platform.
 
 The site is designed using a **mobile-first** approach and can be viewed [HERE](https://pitchcatch.herokuapp.com/). 
 
