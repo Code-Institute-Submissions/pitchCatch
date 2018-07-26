@@ -36,7 +36,7 @@ The site is styled using the **Materialize CSS** front-end framework and **JQuer
 
 The database and the entire application is hosted on the **Heroku** platform **nb. to be deployed** 
 
-The site is designed using a **mobile-first** approach and can be viewed [HERE](insert link following deployment). 
+The site is designed using a **mobile-first** approach and can be viewed [HERE](https://pitchcatch.herokuapp.com/). 
 
 
 ## Features
