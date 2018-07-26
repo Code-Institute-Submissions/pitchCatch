@@ -24,7 +24,7 @@
     <div class="col s12 m7 profile-card">
         <div class="card sticky-action">
             <div>
-                <div class="brand-logo center-align"><img class="form-logo" src="/static/images/catcher.png">SUMMARY</div>
+                <div class="brand-logo center-align card-header"><img class="form-logo" src="/static/images/catcher.png">SUMMARY</div>
                 <hr>
                 <ul class="center-align">
                     <li><strong>WHERE I'M BASED:</strong></li>
@@ -54,7 +54,7 @@
                 <p>{{ catcher.developer_description }}</p>
                 <blockquote class="blocktheme-catcher">
                     <span class="card-title brand-logo grey-text text-darken-4">Programming Experience</span>
-                    <ul>
+                    <ul class="card-margin">
                         {% if catcher.frontend_interest.value == 'Yes' %}
                         <li><strong>Front-end programming:</strong></li>
                         <li>I am interested in front end development projects</li>

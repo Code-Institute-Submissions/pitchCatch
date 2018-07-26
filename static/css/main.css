@@ -46,6 +46,10 @@ i.medium {
 .delete {
   color: #ff4040; }
 
+/*Card font*/
+.card-header {
+  font-size: 2rem; }
+
 .search-heading {
   background: rgba(0, 0, 0, 0.87);
   padding: 10px; }
@@ -199,6 +203,9 @@ input {
   left: 1rem;
   opacity: 0.85;
   box-shadow: 2px 2px 5px 1px #a08111; }
+
+.card-margin {
+  margin-bottom: 12rem; }
 
 .catcher-logo {
   display: inline;
