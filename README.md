@@ -1,5 +1,3 @@
-![alt text](Database-Schema/FullSizeRender.jpggit )
-
 # pitchCatch
 A platform matching social movements with software developers to create innovative and effective applications.
 
@@ -10,7 +8,7 @@ Social movements often lack the resources, expertise or time needed to benefit f
 
 On the other hand, socially conscious software developers often find themselves without the connections required to engage in meanginful projects that will be of practical use to people advancing progressive causes.
 
-pitchCatch is a platform to bring these two worlds together in order to create effective technological tools for change.
+**pitchCatch** is a platform to bring these two worlds together in order to create effective technological tools for change.
 
 ### What does it do?
 Users sign-up to pitchCatch under two categories:
@@ -19,25 +17,26 @@ Users sign-up to pitchCatch under two categories:
 
 Once a **Pitcher** has registered their profile details, they are able to make a **Pitch**. 
 
-**Pitches** are ideas for software projects that have been proposed by **pitchers**.
+A **Pitch** is an idea for a software project that have been proposed by **Pitchers**.
 
 All **Pitches** on the pitchCatch platform are searchable, and if a software developer, or **Catcher**, is interested in participating in a particular project, they can choose to **Catch** the **Pitch**.   
 
-**Catchers** and **Pitchers** have profile pages outlining their interests, skills, etc and these can also be searched to find potential partners, contactable through the email information provided. 
+**Catchers** and **Pitchers** have profile pages outlining their interests, skills, etc and these can also be searched to find potential partners, contactable through the email information provided. **Pitches** have profile pages providing details of the proposed project.
 
 
 ### How does it work
  
-pitchCatch is built using the python-based **Flask** micro-framework and is written in **python 3.4.3**. 
+**pitchCatch** is built using the python-based **Flask** micro-framework and is written in **python 3.4.3**. 
 
 **SQLAlchemy** is used to map the application's Python classes to a **PSQL** database. User data is handled using **WTForms-Alchemy**
 
-The site is styled using the **Materialize CSS** front-end framework and **JQuery** code for enhancing user-experience. 
+The site is styled using the **Materialize CSS** front-end framework with **JQuery** code for enhancing user-experience. 
 
-The database and the entire application is hosted on the **Heroku** platform.
+The database and the application are hosted on the **Heroku** platform. The **PSQL** is provided by the **Heroku Postgres** add-on. The **DATABASE_URL** and **SECRET_KEY** are hidden in .gitignore file during development and stored as environment variables using Heroku Config Vars in production. 
+
+> Note that earlier versions of the app were pushed to GitHub with config.py variables, including SECRET_KEY, displayed. The SECRET KEY has since been changed.
 
 The site is designed using a **mobile-first** approach and can be viewed [HERE](https://pitchcatch.herokuapp.com/). 
-
 
 ## Features
 Find below the features provided in the pitchCatch application. 
@@ -65,21 +64,24 @@ Find below the features provided in the pitchCatch application.
 All of the **Pitchers**, **Catchers** and **Pitches** on the pitchCatch platform can be searched by using filters. Records matching the user's search criteria are diplsayed in a table  
 
 
+### Testing
+The site was tested manually by walking through the features from the perspective of the two targeted user groups: Pitchers (social movements) and Catchers (software developers). Testing was also carried out on JQuery effects and browser compatibility. 
+
+The testing process is detailed [here](testing/testing.md)
+
 ### Features Left to Implement
 - user authentication
-- testing
-
 
 ## Database Schema
 The pitchCatch database schema was developed by progessing through the following steps:
-- defining the Entity-Relationship Model (ERM) and the cardinality of relationships to articulate the basic relations and constraints between the python classes as represented in a database
-- from the relationships defined in the ERM, deciding to use a relational database (PSQL) to store the data
-- developing user stories to draw out why and how users would interact with the data in the application
-- establishing the entity attributes that are required to meet the expectations outlined in the user stories 
-- using the ERM to determine the Create, Read, Update, Delete (CRUD) functions relative to each entity
+- defining the **Entity-Relationship Model (ERM)** and the cardinality of relationships to articulate the basic relations and constraints between the python classes as represented in a database
+- from the relationships defined in the ERM, deciding to use a relational database **(PSQL)** to store the data
+- developing **user stories** to draw out why and how users would interact with the data in the application
+- establishing the **entity attributes** that are required to meet the expectations outlined in the user stories 
+- using the ERM to determine the **Create, Read, Update, Delete (CRUD)** functions relative to each entity
 - developing the python classes based on above
 
-Examples of outputs from each of the above steps are provided in the [Database Schema sub-directory](Database-Schema/db_schema.md)
+Examples of outputs from each of the above steps are provided in the [Database Schema sub-directory](database-schema/db_schema.md)
 
 ## Tech Used
 
@@ -105,8 +107,7 @@ Examples of outputs from each of the above steps are provided in the [Database S
 - [Heroku-Postres](https://www.heroku.com/postgres)
     - During development mode, models were migrated to the a psql database. In production mode, data is stored in a postgreSQL database using **Heroku-Postres**.
 - [Heroku](https://www.heroku.com/)
-    - The Cloud Application Platform **Heroku** hosts the pitchCatch application.
-
+    - The Cloud Application Platform **Heroku** hosts the pitchCatch application. While the 
 
 ## Contributing
  
@@ -116,10 +117,11 @@ Examples of outputs from each of the above steps are provided in the [Database S
 2. Clone this repository by running the ```git clone https://github.com/Deasun/pitchCatch.git``` command
 3. pip install requirements
 4. Set up a psql database and connect the application to it
-5. Paste your psql database details in the config.py file:
-> `engine = create_engine('postgresql://<username>:<password>@localhost:5432/<database name>', convert_unicode=True)`
-6. The project will now run on [localhost](http://127.0.0.1:8080)
-7. We welcome all contributions to improving our code and encourage pull requests. Please see **Features To Be Implemented** for particular features we are eager to progress.
+5. Paste your psql database details in a config.py file in your local directory:
+> `DATABASE_URL = create_engine('postgresql://<username>:<password>@localhost:5432/<database name>', convert_unicode=True)`
+6. Import ```DATABASE_URL``` to the database.py file and store it in the engine variable (remembering to delete the ```DATABASE_URL``` stored as an environment variable
+7. The project will now run on [localhost](http://127.0.0.1:8080)
+7. We welcome all contributions to improving our code and encourage pull requests. Please see **Features left to implement** for particular features we are eager to progress.
 
 ## Credits
 
