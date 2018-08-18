@@ -2,12 +2,12 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-# from config import DATABASE_URL
 
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 DATABASE = create_engine(DATABASE_URL)
 engine = DATABASE
+
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))
