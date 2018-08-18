@@ -7,7 +7,6 @@ from database import init_db
 app = Flask(__name__)
 
 app.config.from_pyfile('config.py')
-# stick in here os.get... instead of above?
 
 from models import *
 
