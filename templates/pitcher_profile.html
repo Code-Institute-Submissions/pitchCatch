@@ -3,14 +3,12 @@
 {% block content %}
 
 <div class="row margin-top">
-
     <div class="col s12 background-pitchers left-align">
         
         <!--Tooltip page guide-->
         <h5>pitcher profile <a class="tooltipped" data-position="top" data-tooltip="Click in the bottom half of the profile card to reveal further information about this pitcher">
             <i class="material-icons medium">help_outline</i></a></h5>
     </div>
-
 
     {% for pitcher in pitcher_profile %}
     <div class="col s12 m5 left-align profile-name">
@@ -41,14 +39,12 @@
                 <span class="card-title activator grey-text text-darken-4 left-align">pitches to date:<i class="material-icons right">more_vert</i></span>
                 <ul>
                     {% for throw in pitcher.throw %}
-
-                    <!--if statement needed for blank-->
-                    {% if pitcher.throw == Null %}
+                        <!--if statement needed for blank-->
+                        {% if pitcher.throw == Null %}
                     <li>None</li>
-                    {% else %}
-                    
+                        {% else %}
                     <li><a href='/pitch_profile/{{throw.proposal_name}}'>{{ throw.proposal_name }}</a></li>
-                    {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </div>
@@ -67,4 +63,6 @@
         </a>
     </div>
 </div>
-    {% endfor %} {% endblock %}
+    {% endfor %} 
+
+{% endblock %}

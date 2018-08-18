@@ -14,7 +14,6 @@ query_dict = {}
 """Create Search Dictionary Items"""
 def query(k,v):
     query_dict[k]=v
-    # print(query_dict)
 
 
 """

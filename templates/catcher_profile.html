@@ -3,23 +3,19 @@
 {% block content %}
 
 <div class="row margin-top">
-
-
     <div class="col s12 background-catchers left-align">
         
         <!--Tooltip page guide-->
         <h5>catcher Profile <a class="tooltipped" data-position="top" data-tooltip="Click in the bottom half of the profile card to reveal further information about this catcher">
             <i class="material-icons medium">help_outline</i></a></h5>
     </div>
-
-
+    
     {% for catcher in catcher_profile %}
     <div class="col s12 m5 left-align profile-name">
         <blockquote class="blocktheme-catcher">
             <h1>{{catcher.developer_name}}</h1>
         </blockquote>
     </div>
-
     <!--Materilize card to display profile information-->
     <div class="col s12 m7 profile-card">
         <div class="card sticky-action">

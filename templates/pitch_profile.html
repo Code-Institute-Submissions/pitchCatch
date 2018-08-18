@@ -14,7 +14,7 @@
         <blockquote class="blocktheme-pitch">
             <h1>{{pitches_list.proposal_name}}</h1>
         </blockquote>
-
+        
         <form method="POST" action="/catch_pitch/{{pitches_list.proposal_name}}">
             <div class="input-field hide">
                 <i class="material-icons large right">new_releases</i>
@@ -74,11 +74,11 @@
     </div>
     <div class="col s7 offset-s5">
         <a href='/edit_pitch/{{pitches_list.proposal_name}}'>
-                <i class="material-icons medium left">edit</i>
-            </a>
+            <i class="material-icons medium left">edit</i>
+        </a>
         <a href='/delete_pitch/{{pitches_list.proposal_name}}'>
-                <i class="material-icons medium left delete">delete_forever</i>
-            </a>
+            <i class="material-icons medium left delete">delete_forever</i>
+        </a>
     </div>
 </div>
 {% endblock %}
