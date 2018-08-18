@@ -7,7 +7,8 @@
         
         <!--Tooltip page guide-->
         <h5>pitcher profile <a class="tooltipped" data-position="top" data-tooltip="Click in the bottom half of the profile card to reveal further information about this pitcher">
-            <i class="material-icons medium">help_outline</i></a></h5>
+            <i class="material-icons medium">help_outline</i></a>
+        </h5>
     </div>
 
     {% for pitcher in pitcher_profile %}
@@ -50,7 +51,7 @@
             </div>
             <div class="card-reveal">
                 <span class="card-title brand-logo grey-text text-darken-4">About us<i class="material-icons right">close</i></span>
-                <p>{{ pitcher.movement_description }}</p><br><br>
+                <p class="card-margin">{{ pitcher.movement_description }}</p><br><br>
             </div>
         </div>
     </div>

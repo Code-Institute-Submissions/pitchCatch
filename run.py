@@ -6,7 +6,11 @@ from database import init_db
 
 app = Flask(__name__)
 
-app.config.from_pyfile('config.py')
+# testing secret_key
+SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
+app.secret_key = SECRET_KEY
+
+# app.config.from_pyfile('config.py')
 
 from models import *
 
