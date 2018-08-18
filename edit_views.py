@@ -3,6 +3,7 @@ from run import app
 from models import Pitcher, Pitch, Catcher
 from forms import PitchForm, PitcherForm, CatcherForm
 from database import db_session
+from sqlalchemy.exc import IntegrityError
 
 """EDIT PROFILE VIEWS"""
 
@@ -14,7 +15,7 @@ def edit_pitcher(movement_name):
     pitcher_edit = db_session.query(Pitcher).filter_by(movement_name=movement_name).first()
     # Prepopulate form with existing data
     form = PitcherForm(request.form, obj=pitcher_edit)
-
+    
     if request.method == 'POST' and form.validate():
         # update record with request.form data
         form.populate_obj(pitcher_edit)
