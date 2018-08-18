@@ -116,3 +116,5 @@ The application was tested in each of the following browsers:
   - Microsoft Edge
   - Mozilla Firefox
   - Safari
+ 
+All of the browsers were compatible except **Opera** which displayed an occasional and inconsistent bug. On any of the profile pages (Pitcher/Catcher/Pitch), when the card was opened to reveal further details, the card element would 'shake' for a second before stopping. This also happened intermittently when selecting the dropdown menu.  
